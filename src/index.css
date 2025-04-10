@@ -1,1 +1,15 @@
+@font-face{
+    font-family: 'Open Sans';
+    src: url("./assets/fonts/OpenSans-SemiBold.ttf")
+}
+
+@font-face{
+    font-family: "Raleway";
+    src: url("./assets/fonts/Raleway-Medium.ttf");
+}
 @import "tailwindcss";
+
+@theme{
+    --font-opensans: 'Open Sans', sans-serif;
+    --font-raleway: "Raleway", sans-serif;
+}
