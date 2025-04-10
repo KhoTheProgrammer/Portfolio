@@ -7,9 +7,15 @@
     font-family: "Raleway";
     src: url("./assets/fonts/Raleway-Medium.ttf");
 }
+
+@font-face{
+    font-family: "Poppins";
+    src: url("./assets/fonts/Poppins-Medium.ttf")
+}
 @import "tailwindcss";
 
 @theme{
     --font-opensans: 'Open Sans', sans-serif;
     --font-raleway: "Raleway", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
 }
