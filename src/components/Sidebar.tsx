@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FaGithub,
   FaFacebook,
@@ -10,7 +9,6 @@ import {
   BiHome,
   BiUser,
   BiFileBlank,
-  BiServer,
   BiEnvelope,
   BiBookContent,
 } from "react-icons/bi";
