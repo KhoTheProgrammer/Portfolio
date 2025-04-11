@@ -23,8 +23,8 @@ const Home = () => {
               strings={[
                 "Web Developer",
                 "Full-Stack Developer",
-                "App Developer",
-              ]}
+                "Software Engineer",
+              ]} 
               typeSpeed={40}
               backSpeed={30}
               loop

@@ -4,6 +4,7 @@ import {
   FaInstagram,
   FaSkype,
   FaLinkedin,
+  FaWhatsapp
 } from "react-icons/fa";
 import {
   BiHome,
@@ -14,6 +15,7 @@ import {
 } from "react-icons/bi";
 import { BsCodeSlash } from "react-icons/bs";
 import khoo from "../assets/kho2.jpg";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -36,7 +38,7 @@ const Sidebar = () => {
               <FaGithub />
             </a>
             <a
-              href="#"
+              href="https://web.facebook.com/profile.php?id=100084319704616"
               className=" bg-[#212431] hover:bg-[#149ddd] hover:text-white p-2 rounded-full"
             >
               <FaFacebook />
@@ -48,10 +50,10 @@ const Sidebar = () => {
               <FaInstagram />
             </a>
             <a
-              href="#"
+              href="wa.link/w5tdwl"
               className="bg-[#212431] hover:bg-[#149ddd] hover:text-white p-2 rounded-full"
             >
-              <FaSkype />
+              <FaWhatsapp/>
             </a>
             <a
               href="https://www.linkedin.com/in/kondwani-padyera-9a511a26b"
@@ -65,51 +67,46 @@ const Sidebar = () => {
         <nav className="mt-10 w-full">
           <ul className="flex flex-col space-y-4 text-white text-sm">
             <li>
-              <a
+              <Link to="/home"
                 className="flex items-center gap-2 px-4 py-2 hover:bg-[#1a1f28] rounded"
               >
                 <BiHome className=" text-2xl hover:text-[#149ddd] text-[#a8a9b4]"/> <span className="text-[#a8a9b4] hover:text-white">Home</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#about"
+              <Link to="/about"
                 className="flex items-center gap-2 px-4 py-2 hover:bg-[#1a1f28] rounded"
               >
                 <BiUser  className=" text-2xl hover:text-[#149ddd] text-[#a8a9b4]"/> <span className="text-[#a8a9b4] hover:text-white">About</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#resume"
+              <Link to="Resume"
                 className="flex items-center gap-2 px-4 py-2 hover:bg-[#1a1f28] rounded"
               >
                 <BiFileBlank className=" text-2xl hover:text-[#149ddd] text-[#a8a9b4]"/> <span className="text-[#a8a9b4] hover:text-white">Resume</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#skills"
+              <Link to="Skills"
                 className="flex items-center gap-2 px-4 py-2 hover:bg-[#1a1f28] rounded"
               >
                 <BsCodeSlash className=" text-2xl hover:text-[#149ddd] text-[#a8a9b4]"/> <span className="text-[#a8a9b4] hover:text-white">Skills</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#portfolio"
+              <Link to="Projects"
                 className="flex items-center gap-2 px-4 py-2 hover:bg-[#1a1f28] rounded"
               >
                 <BiBookContent className=" text-2xl hover:text-[#149ddd] text-[#a8a9b4]"/> <span className="text-[#a8a9b4] hover:text-white">Projects</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#contact"
+              <Link to="/contact"
                 className="flex items-center gap-2 px-4 py-2 hover:bg-[#1a1f28] rounded"
               >
                 <BiEnvelope className=" text-2xl hover:text-[#149ddd] text-[#a8a9b4]"/> <span className="text-[#a8a9b4] hover:text-white">Contact</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
