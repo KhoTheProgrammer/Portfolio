@@ -1,16 +1,34 @@
-import React from 'react'
 import Sidebar from "./components/Sidebar";
-import Home from './components/Home';
-
-
+import Home from "./components/Home";
+import About from "./components/About";
+import Skill from "./components/Skill";
+import Contact from "./components/Contact";
+import Resume from "./components/Resume";
+import Project from "./components/Project";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 const App = () => {
   return (
-    <div className=' fle'>
-      <Sidebar></Sidebar>
-      <Home></Home>
-    </div>
-  )
-}
+    <BrowserRouter>
+      <div className="flex">
+        {/* Sidebar stays always on the left */}
+        <Sidebar />
 
-export default App
+        {/* Main content on the right */}
+        <div className="w-full ml-[300px]">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/skill" element={<Skill />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/project" element={<Project />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
+  );
+};
+
+export default App;
