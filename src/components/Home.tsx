@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactTyped } from "react-typed";
 import home from "../assets/home.jpg"
 import resume from "../assets/files/Resume.pdf"

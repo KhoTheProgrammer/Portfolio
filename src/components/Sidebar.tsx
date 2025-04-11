@@ -54,7 +54,7 @@ const Sidebar = () => {
               <FaSkype />
             </a>
             <a
-              href="https://www.linkedin.com/in/pankaj-kumar-techie/"
+              href="https://www.linkedin.com/in/kondwani-padyera-9a511a26b"
               className="bg-[#212431] hover:bg-[#149ddd] hover:text-white p-2 rounded-full"
             >
               <FaLinkedin />
