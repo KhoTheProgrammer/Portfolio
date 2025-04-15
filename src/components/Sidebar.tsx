@@ -81,21 +81,21 @@ const Sidebar = () => {
               </Link>
             </li>
             <li>
-              <Link to="Resume"
+              <Link to="/resume"
                 className="flex items-center gap-2 px-4 py-2 hover:bg-[#1a1f28] rounded"
               >
                 <BiFileBlank className=" text-2xl hover:text-[#149ddd] text-[#a8a9b4]"/> <span className="text-[#a8a9b4] hover:text-white">Resume</span>
               </Link>
             </li>
             <li>
-              <Link to="Skills"
+              <Link to="/skill"
                 className="flex items-center gap-2 px-4 py-2 hover:bg-[#1a1f28] rounded"
               >
                 <BsCodeSlash className=" text-2xl hover:text-[#149ddd] text-[#a8a9b4]"/> <span className="text-[#a8a9b4] hover:text-white">Skills</span>
               </Link>
             </li>
             <li>
-              <Link to="Projects"
+              <Link to="/project"
                 className="flex items-center gap-2 px-4 py-2 hover:bg-[#1a1f28] rounded"
               >
                 <BiBookContent className=" text-2xl hover:text-[#149ddd] text-[#a8a9b4]"/> <span className="text-[#a8a9b4] hover:text-white">Projects</span>
