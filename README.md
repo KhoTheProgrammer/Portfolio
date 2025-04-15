@@ -39,6 +39,41 @@ You can view the live site here: [https://KhoTheProgrammer.netlify.app]
 ### Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/KhoTheProgrammer/Portfolio.git
+   git clone [https://github.com/KhoTheProgrammer/Portfolio.git]
    cd your-portfolio
+2. **Install dependencies**
+   npm install
+3. **Start the development server**
+   npm run dev
+4. **Open your browser** and navigate to [http://localhost:5173]
+
+### 🧾 Folder Structure
+
+  Portfolio/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── App.tsx
+│   └── main.tsx
+├── .gitignore
+├── index.html
+├── package.json
+└── tailwind.config.js
+
+### 🔧 Customization Tips
+
+- Update content in [src/components/] like [Home.tsx], [About.tsx], etc.
+- Update your skills in [SkillsSection.tsx] using your personal stack.
+- Swap icons using [https://react.dev](React Icons)
+
+### 📬 Contact
+
+Feel free to connect with me via the Contact section of the site or through:
+
+- Email: [kondwanipadyera@gmail.com]
+- Github: [https://github.com/KhoTheProgrammer]
+
+### 📄 License
+
+This project is open-source and available under the [MIT License].
