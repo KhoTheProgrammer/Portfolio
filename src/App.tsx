@@ -1,7 +1,7 @@
 import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
 import About from "./components/About";
-import Skill from "./components/Skill";
+import SkillsSection from "./components/SkillSection";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
 import Project from "./components/Project";
@@ -21,7 +21,7 @@ const App = () => {
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/resume" element={<Resume />} />
-            <Route path="/skill" element={<Skill />} />
+            <Route path="/skill" element={<SkillsSection />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/project" element={<Project />} />
           </Routes>
