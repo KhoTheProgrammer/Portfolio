@@ -40,12 +40,12 @@ You can view the live site here: [https://KhoTheProgrammer.netlify.app]
 
 1. **Clone the repository**
    git clone [https://github.com/KhoTheProgrammer/Portfolio.git]
-   cd your-portfolio
-2. **Install dependencies**
+   cd Portfolio
+3. **Install dependencies**
    npm install
-3. **Start the development server**
+4. **Start the development server**
    npm run dev
-4. **Open your browser** and navigate to [http://localhost:5173]
+5. **Open your browser** and navigate to [http://localhost:5173]
 
 ### 🧾 Folder Structure
 
@@ -65,7 +65,7 @@ You can view the live site here: [https://KhoTheProgrammer.netlify.app]
 
 - Update content in [src/components/] like [Home.tsx], [About.tsx], etc.
 - Update your skills in [SkillsSection.tsx] using your personal stack.
-- Swap icons using [https://react.dev](React Icons)
+- Swap icons using [https://react.dev] (React Icons)
 
 ### 📬 Contact
 
