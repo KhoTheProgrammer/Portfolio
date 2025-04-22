@@ -4,14 +4,9 @@ import {
   FaCode,
   FaLaptopCode,
   FaServer,
-  FaProjectDiagram,
-  FaCloud,
-  FaTools,
   FaDatabase,
-  FaComments,
   FaCogs,
   FaWindows,
-  FaStream,
 } from "react-icons/fa";
 
 const skillsData = [

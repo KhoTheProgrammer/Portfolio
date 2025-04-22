@@ -1,4 +1,3 @@
-import React from "react";
 import profilePic from "../assets/kho2.jpg";
 
 const About = () => {

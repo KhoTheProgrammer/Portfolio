@@ -2,7 +2,6 @@ import {
   FaGithub,
   FaFacebook,
   FaInstagram,
-  FaSkype,
   FaLinkedin,
   FaWhatsapp
 } from "react-icons/fa";
