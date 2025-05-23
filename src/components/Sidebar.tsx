@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <header className="fixed top-0 left-0 bottom-0 w-[300px] transition-all duration-500 ease-in-out z-[9997] px-[15px] bg-[#040b14] overflow-y-auto font-opensans">
+    <header className="fixed top-0 left-0 bottom-0 w-[300px] transition-all duration-500 ease-in-out  px-[15px] bg-[#040b14] overflow-y-auto font-opensans">
       <div className="flex flex-col items-center">
         <div className="profile text-center">
           <img
