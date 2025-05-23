@@ -5,6 +5,7 @@ import SkillsSection from "./components/SkillSection";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
 import Project from "./components/Project";
+import Footer from "./components/Footer";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           </Routes>
         </div>
       </div>
+      <Footer></Footer>
     </BrowserRouter>
   );
 };
