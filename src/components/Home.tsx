@@ -13,10 +13,10 @@ const Home = () => {
 
       {/* Content */}
       <div className="relative z-20 min-w-[300px] px-4">
-        <h1 className="text-white text-[64px] leading-[56px] font-bold mb-2 md:text-[64px] md:leading-[56px] sm:text-[28px] sm:leading-[36px]">
+        <h1 className="text-white md:text-[64px] md:leading-[56px] font-bold mb-2 text-[28px] leading-[36px]">
           Kondwani Padyera
         </h1>
-        <p className="text-white text-[26px] font-poppins mb-12 sm:text-[18px] sm:mb-8">
+        <p className="text-white md:text-[26px] font-poppins md:mb-12 text-[18px] mb-8">
           I'm a {" "}
           <span className="border-b-[3px] border-[#149ddd] pb-1 tracking-wider">
             <ReactTyped
