@@ -14,7 +14,6 @@ import {
 } from "react-icons/bi";
 import { BsCodeSlash } from "react-icons/bs";
 import khoo from "../assets/kho2.jpg";
-import { Link } from "react-router-dom";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -22,12 +21,20 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
+  const handleClick = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Close sidebar on mobile after clicking
+    if (window.innerWidth < 1024) {
+      toggleSidebar();
+    }
+  };
   return (
-    <header 
-      className={`fixed top-0 left-0 bottom-0 w-[300px] transition-all duration-500 ease-in-out px-[15px] bg-[#040b14] overflow-y-auto font-opensans z-[9999] ${
-        isOpen ? "translate-x-0" : "-translate-x-full"
-      } lg:translate-x-0 lg:block`}
-    >
+    <header className={`fixed top-0 left-0 bottom-0 w-[300px] transition-all duration-500 ease-in-out px-[15px] bg-[#040b14] overflow-y-auto font-opensans z-[9999] ${
+      isOpen ? "translate-x-0" : "-translate-x-full"
+    } lg:translate-x-0 lg:block`}>
       <div className="flex flex-col items-center">
         <div className="profile text-center">
           <img
@@ -75,31 +82,21 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
         <nav className="mt-10 w-full">
           <ul className="flex flex-col space-y-4 text-white text-sm">
             {[
-              { to: "/home", icon: <BiHome />, text: "Home" },
-              { to: "/about", icon: <BiUser />, text: "About" },
-              { to: "/resume", icon: <BiFileBlank />, text: "Resume" },
-              { to: "/skill", icon: <BsCodeSlash />, text: "Skills" },
-              { to: "/project", icon: <BiBookContent />, text: "Projects" },
-              { to: "/contact", icon: <BiEnvelope />, text: "Contact" },
+              { id: "home", icon: <BiHome />, text: "Home" },
+              { id: "about", icon: <BiUser />, text: "About" },
+              { id: "resume", icon: <BiFileBlank />, text: "Resume" },
+              { id: "skill", icon: <BsCodeSlash />, text: "Skills" },
+              { id: "project", icon: <BiBookContent />, text: "Projects" },
+              { id: "contact", icon: <BiEnvelope />, text: "Contact" },
             ].map((item) => (
-              <li key={item.to}>
-                <Link
-                  to={item.to}
-                  className="flex items-center gap-2 px-4 py-2 hover:bg-[#1a1f28] rounded"
-                  onClick={() => {
-                    // Close sidebar when a link is clicked on mobile
-                    if (window.innerWidth < 1024) {
-                      toggleSidebar();
-                    }
-                  }}
-                >
-                  <span className="text-2xl hover:text-[#149ddd] text-[#a8a9b4]">
-                    {item.icon}
-                  </span>
-                  <span className="text-[#a8a9b4] hover:text-white">
-                    {item.text}
-                  </span>
-                </Link>
+              <li key={item.id}>
+                <button 
+              onClick={() => handleClick(item.id)}
+              className="flex items-center gap-2 px-4 py-2 hover:bg-[#1a1f28] rounded w-full text-left"
+            >
+              {<item.icon.type className="text-2xl hover:text-[#149ddd] text-[#a8a9b4]"/>}
+              <span className="text-[#a8a9b4] hover:text-white">{item.text}</span>
+            </button>
               </li>
             ))}
           </ul>
