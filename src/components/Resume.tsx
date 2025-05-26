@@ -7,7 +7,7 @@ const Resume = () => {
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-10">
-          <div className="md:max-w-[70%] mb-4 md:mb-0 text-center md:text-left">
+          <div className="md:max-w-[70%] mb-4 md:mb-0 text-left">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-white relative pb-5 mb-5">
               Professional Resume
               <span className="absolute bottom-0 left-0 md:left-0 w-12 h-1 bg-blue-500"></span>
