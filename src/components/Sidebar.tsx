@@ -65,8 +65,9 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
               <FaInstagram />
             </a>
             <a
-              href="wa.link/w5tdwl"
+              href="https://wa.me/265887107311"
               className="bg-[#212431] hover:bg-[#149ddd] hover:text-white p-2 rounded-full"
+              target="_blank " rel="noopener noreferrer"
             >
               <FaWhatsapp/>
             </a>
