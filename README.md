@@ -4,7 +4,7 @@ Welcome to my personal developer portfolio! This project is a responsive, intera
 
 ## 🚀 Live Demo
 
-You can view the live site here: [https://KhoTheProgrammer.netlify.app]
+You can view the live site here: [https://kondwani-padyera.vercel.app]
 
 ---
 
