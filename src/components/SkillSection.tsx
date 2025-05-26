@@ -40,7 +40,6 @@ const skillsData = [
     icon: FaDatabase,
     title: "Frameworks",
     categories: [
-      { icon: FaDatabase, name: "Databases", items: ["Postgresql"] },
       {
         icon: FaLaptopCode,
         name: "Frontend",
