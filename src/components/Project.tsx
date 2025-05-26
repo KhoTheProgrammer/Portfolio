@@ -14,7 +14,11 @@ interface Project {
   liveLink: string;
 }
 
-const Project = () => {
+interface SectionProps {
+  id: string;
+}
+
+const Project = ({id}: SectionProps) => {
   const projects: Project[] = [
     {
       title: "KonnectUs",
@@ -69,7 +73,7 @@ const Project = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900" id={id}>
       <div className="max-w-6xl mx-auto">
         <div className="md:max-w-[70%] mb-4  text-left">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white relative pb-5 mb-5">

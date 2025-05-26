@@ -1,9 +1,13 @@
 import { FiDownload } from "react-icons/fi";
 import resume from "../assets/files/Resume.pdf";
 
-const Resume = () => {
+interface SectionProps {
+  id: string;
+}
+
+const Resume = ({id}: SectionProps) => {
   return (
-    <section id="resume" className="py-16 overflow-hidden">
+    <section id={id} className="py-16 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-10">

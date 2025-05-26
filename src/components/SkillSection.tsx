@@ -11,6 +11,10 @@ import {
   FaTools,
 } from "react-icons/fa";
 
+interface SectionProps {
+  id: string;
+}
+
 const skillsData = [
   {
     icon: FaCode,
@@ -79,8 +83,8 @@ const skillsData = [
   },
 ];
 
-const SkillsSection: React.FC = () => (
-  <section id="skills" className="bg-[#f5f8fd] py-16">
+const SkillsSection = ({id}:SectionProps) => (
+  <section id={id} className="bg-[#f5f8fd] py-16">
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-[#173b6c] mb-4 relative inline-block after:block after:w-12 after:h-1 after:bg-blue-500 after:absolute after:bottom-[-8px] after:left-1/2 after:transform after:-translate-x-1/2">

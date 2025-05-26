@@ -1,8 +1,12 @@
 import profilePic from "../assets/kho2.jpg";
 
-const About = () => {
+interface SectionProps {
+  id: string;
+}
+const About = ({id}: SectionProps) => {
+  
   return (
-    <section id="about" className="py-16 overflow-hidden px-8">
+    <section id={id} className="py-16 overflow-hidden px-8">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="mb-8 relative pb-6 text-left">

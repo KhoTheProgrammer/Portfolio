@@ -2,11 +2,15 @@ import { ReactTyped } from "react-typed";
 import home from "../assets/home.jpg"
 import resume from "../assets/files/Resume.pdf"
 
-const Home = () => {
+interface SectionProps {
+  id: string;
+}
+const Home = ({id}: SectionProps) => {
   return (
     <section
       className="relative w-full h-screen bg-cover bg-center bg-fixed flex flex-col justify-center items-center"
       style={{ backgroundImage: `url(${home})` }}
+      id={id}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-[rgba(5,13,24,0.3)] z-10"></div>

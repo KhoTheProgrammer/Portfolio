@@ -2,7 +2,11 @@ import { FiMapPin, FiMail, FiPhone } from "react-icons/fi";
 import { useForm, ValidationError } from "@formspree/react";
 import { useEffect, useState } from "react";
 
-const Contact = () => {
+interface SectionProps {
+  id: string;
+}
+
+const Contact = ({id}: SectionProps) => {
   const [state, handleSubmit] = useForm("xqaqvgpp");
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -18,7 +22,7 @@ const Contact = () => {
   }, [state.succeeded]);
 
   return (
-    <section id="contact" className="pb-32 pt-16">
+    <section id={id} className="pb-32 pt-16">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="t mb-12">
