@@ -8,6 +8,7 @@ import Resume from "./components/Resume";
 import Project from "./components/Project";
 import Footer from "./components/Footer";
 import Menu from "./components/Menu";
+import BackToTop from "./components/BackToTop";
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -31,6 +32,7 @@ const App = () => {
         <SkillsSection id="skills" />
         <Project id="project" />
         <Contact id="contact" />
+      <BackToTop></BackToTop>
       </div>
         <Footer></Footer>
       </div>
