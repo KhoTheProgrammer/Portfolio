@@ -7,6 +7,8 @@ import {
   FaDatabase,
   FaCogs,
   FaWindows,
+  FaToolbox,
+  FaTools,
 } from "react-icons/fa";
 
 const skillsData = [
@@ -33,7 +35,7 @@ const skillsData = [
 
   {
     icon: FaDatabase,
-    title: "Databases & Frameworks",
+    title: "Frameworks",
     categories: [
       { icon: FaDatabase, name: "Databases", items: ["Postgresql"] },
       {
@@ -45,6 +47,22 @@ const skillsData = [
         icon: FaServer,
         name: "Backend",
         items: ["Nest Js", "Express Js", "Node Js"],
+      },
+    ],
+  },
+  {
+    icon: FaToolbox,
+    title: "  Tools and Database",
+    categories: [
+      {
+        icon: FaDatabase,
+        name: "Databases",
+        items: ["Postgresql", "Supabase", "Firebase"],
+      },
+      {
+        icon: FaTools,
+        name: "Tools",
+        items: ["Git", "Vs Code", "Netlify", "Vercel", "Render", "Docker"],
       },
     ],
   },
