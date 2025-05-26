@@ -8,7 +8,6 @@ import Resume from "./components/Resume";
 import Project from "./components/Project";
 import Footer from "./components/Footer";
 import Menu from "./components/Menu";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,27 +17,23 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter>
+   
       <div className="lg:flex">
         {/* Sidebar - visible on large screens or when toggled on small screens */}
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <Menu toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
         
-        {/* Main content on the right */}
-        <div className="w-full lg:ml-[300px]">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/skill" element={<SkillsSection />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/project" element={<Project />} />
-          </Routes>
-        </div>
+        {/* Main content */}
+      <div className="w-full lg:ml-[300px]">
+        <Home id="home" />
+        <About id="about" />
+        <Resume id="resume" />
+        <SkillsSection id="skills" />
+        <Project id="project" />
+        <Contact id="contact" />
+      </div>
         <Footer></Footer>
       </div>
-    </BrowserRouter>
   );
 };
 
