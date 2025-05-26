@@ -26,7 +26,7 @@ const About = ({id}: SectionProps) => {
           </div>
 
           {/* Text Content */}
-          <div className="lg:w-2/3 pt-4 lg:pt-0" data-aos="fade-left">
+          <div className="lg:w-2/3 pt-4 lg:pt-0" >
             <h3 className="text-2xl font-bold text-[#173b6c] mb-4">
               Software Engineer
             </h3>
@@ -34,16 +34,16 @@ const About = ({id}: SectionProps) => {
               Dedicated software engineer with expertise in Javascript, NestJs,
               and React.
             </p>
-            <p>
-              👋 Hi, I’m Kondwani — a third-year Computer Science student with a
+            <p className="text-gray-600 dark:text-gray-300">
+              Hi, I’m Kondwani — a third-year Computer Science student with a
               passion for software development and a knack for building
               efficient backend systems using technologies like Javascript and
-              NestJS. 🚀 I’ve worked on web chat apps, explored OpenGL graphics,
+              NestJS. I’ve worked on web chat apps, explored OpenGL graphics,
               and continuously sharpen my problem-solving skills through
-              academic projects and personal experimentation. 🛠️ My core skills
-              include:<br></br> Backend: Javascript, Espress and NestJS,{" "}
-              <br></br>Frontend: ReactJS Tools: Git, GitHub, IntelliJ, CMake{" "}
-              <br></br>🎮 When I’m not coding, you’ll find me playing FIFA,
+              academic projects and personal experimentation. My core skills
+              include:<br></br> <span className=" font-bold">Backend</span>: Javascript, ExpressJs and NestJS,{" "}
+              <br></br><span className=" font-bold">Frontend</span>: ReactJS and NextJs
+              <br></br>When I’m not coding, you’ll find me playing FIFA,
               learning new tech, or tweaking my dev setup.
             </p>
           </div>
