@@ -15,7 +15,7 @@ interface Project {
   liveLink: string;
 }
 
-const Project = ({ id }: { id: string }) => {
+const Project = () => {
   const projects: Project[] = [
     {
       title: "KonnectUs",
@@ -62,7 +62,7 @@ const Project = ({ id }: { id: string }) => {
   ];
 
   return (
-    <section id={id} className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
+    <section  className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
           My Projects
