@@ -88,6 +88,26 @@ const Resume = ({id}: SectionProps) => {
                 technical expertise.
               </p>
             </div>
+            {/* Education */}
+            <h3 className="text-2xl font-bold text-gray-800  mt-12 mb-5">
+              Work Experience
+            </h3>
+
+            <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
+              <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
+              <h4 className="text-lg font-semibold uppercase text-gray-800 ">
+                DEVELOPER
+              </h4>
+              <h5 className="inline-block text-sm bg-blue-100  px-3 py-1 rounded-full font-semibold my-2">
+                2025 - Present
+              </h5>
+              <p className="italic text-gray-600 ">
+                Lockie Visuals
+              </p>
+              <p className="text-gray-700  mt-2">
+                Currently working with <a href="https://lockievisuals.vercel.app" target="_blank" rel="noopener" className=" text-blue-600">Lockie Visuals</a> as a developer. At lockie visuals i work with a team of 3 developers where we design and develop web and mobile applications.
+              </p>
+            </div>
           </div>
 
           {/* Right Column */}
