@@ -1,6 +1,7 @@
 import { ReactTyped } from "react-typed";
 import home from "../assets/home.jpg"
 import resume from "../assets/files/Resume.pdf"
+import { FiDownload } from "react-icons/fi";
 
 interface SectionProps {
   id: string;
@@ -35,14 +36,16 @@ const Home = ({id}: SectionProps) => {
             />
           </span>
         </p>
-        <a
-          href={resume}
-          className="inline-flex items-center px-5 py-3 bg-[#149ddd] text-white font-semibold text-base rounded shadow-md hover:bg-[#2eafec] hover:-translate-y-1 transition transform duration-300"
-          download
-        >
-          <i className="bi bi-file-earmark-arrow-down mr-2 text-lg"></i>
-          Download Resume
-        </a>
+        <div className="w-full md:w-auto">
+            <a
+              href={resume}
+              download
+              className="inline-flex items-center px-5 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 shadow-md  hover:-translate-y-1 transition transform duration-300"
+            >
+              <FiDownload className="mr-2" />
+              Download Resume
+            </a>
+          </div>
       </div>
     </section>
   );

@@ -41,8 +41,8 @@ const About = ({id}: SectionProps) => {
               NestJS. I’ve worked on web chat apps, explored OpenGL graphics,
               and continuously sharpen my problem-solving skills through
               academic projects and personal experimentation. My core skills
-              include:<br></br> <span className=" font-bold">Backend</span>: Javascript, ExpressJs and NestJS,{" "}
-              <br></br><span className=" font-bold">Frontend</span>: ReactJS and NextJs
+              include:<br></br> <span className=" font-bold text-black">Backend</span>: Javascript, ExpressJs and NestJS,{" "}
+              <br></br><span className=" font-bold text-black">Frontend</span>: ReactJS and NextJs
               <br></br>When I’m not coding, you’ll find me playing FIFA,
               learning new tech, or tweaking my dev setup.
             </p>

@@ -8,7 +8,7 @@ interface MenuProps {
 const Menu = ({ toggleSidebar, isSidebarOpen }: MenuProps) => {
   return (
     <div 
-      className="fixed top-[15px] right-[15px] z-[9998] text-white bg-[#149ddd] rounded-full p-1 lg:hidden cursor-pointer"
+      className="fixed top-[15px] right-[15px] z-[9998] text-white bg-blue-500 hover:bg-blue-600 rounded-full p-1 lg:hidden cursor-pointer"
       onClick={toggleSidebar}
     >
       {isSidebarOpen ? (
