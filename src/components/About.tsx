@@ -34,7 +34,7 @@ const About = ({id}: SectionProps) => {
               Dedicated software engineer with expertise in Javascript, NestJs,
               and React.
             </p>
-            <p className="text-gray-600 dark:text-gray-300">
+            <p className="text-gray-600">
               Hi, I’m Kondwani — a third-year Computer Science student with a
               passion for software development and a knack for building
               efficient backend systems using technologies like Javascript and
