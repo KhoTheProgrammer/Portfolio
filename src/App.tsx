@@ -19,7 +19,7 @@ const App = () => {
 
   return (
    
-      <div className="lg:flex">
+      <div className="lg:flex font-poppins">
         {/* Sidebar - visible on large screens or when toggled on small screens */}
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <Menu toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
