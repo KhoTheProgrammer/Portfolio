@@ -77,7 +77,7 @@ const Project = ({id}: SectionProps) => {
       tags: ["Next.js", "React", "Node.js"],
       image: portfolio,
       githubLink: "https://github.com/KhoTheProgrammer/quiz-management-system",
-      liveLink: "https://github.com/KhoTheProgrammer/quiz-management-system",
+      liveLink: "https://quiz-management-system-jet.vercel.app",
     },
   ];
 
