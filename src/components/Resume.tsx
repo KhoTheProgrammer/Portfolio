@@ -5,7 +5,7 @@ interface SectionProps {
   id: string;
 }
 
-const Resume = ({id}: SectionProps) => {
+const Resume = ({ id }: SectionProps) => {
   return (
     <section id={id} className="py-16 overflow-hidden">
       <div className="container mx-auto px-4">
@@ -88,10 +88,26 @@ const Resume = ({id}: SectionProps) => {
                 technical expertise.
               </p>
             </div>
-            {/* Education */}
+            {/* Work */}
             <h3 className="text-2xl font-bold text-gray-800  mt-12 mb-5">
               Work Experience
             </h3>
+
+            <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
+              <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
+              <h4 className="text-lg font-semibold uppercase text-gray-800 ">
+                DEVELOPER INTERN
+              </h4>
+              <h5 className="inline-block text-sm bg-blue-100  px-3 py-1 rounded-full font-semibold my-2">
+                2025 - Present
+              </h5>
+              <p className="italic text-gray-600 ">
+                Infi-Tech
+              </p>
+              <p className="text-gray-700  mt-2">
+                Currently working as a Developer Intern at <a href="https://infi-tech.net" target="_blank" rel="noopener" className="text-blue-600">Infi-Tech</a>. During my internship, I have successfully completed a project and contributed to others, collaborating closely with a team of developers. This experience has enabled me to learn and apply new development tools and technologies, enhance my problem-solving skills, and gain valuable insights into real-world software development processes.
+              </p>
+            </div>
 
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
               <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
@@ -153,7 +169,7 @@ const Resume = ({id}: SectionProps) => {
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
               <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
               <h4 className="text-lg font-semibold text-gray-800 ">
-                Dean’s List and Vice Chancellor’s Awards
+                Dean's List and Vice Chancellor's Awards
               </h4>
               <h5 className="inline-block text-sm bg-blue-100  px-3 py-1 rounded-full font-semibold my-2">
                 2023–2024
@@ -185,8 +201,6 @@ const Resume = ({id}: SectionProps) => {
               </p>
             </div>
 
-            
-
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
               <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
               <h4 className="text-lg font-semibold text-gray-800 ">
@@ -197,13 +211,11 @@ const Resume = ({id}: SectionProps) => {
               </h5>
               <p className="italic text-gray-600 ">Huawei</p>
               <p className="text-gray-700  mt-2">
-                Participated in Huawei’s prestigious global ICT program, gaining
+                Participated in Huawei's prestigious global ICT program, gaining
                 exposure to emerging technologies such as cloud computing, AI,
                 and 5G networks.
               </p>
             </div>
-
-            
           </div>
         </div>
       </div>
