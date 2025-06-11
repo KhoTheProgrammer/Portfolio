@@ -70,6 +70,15 @@ const Project = ({id}: SectionProps) => {
       liveLink:
         "https://github.com/KhoTheProgrammer/Solar-sytem-application.git",
     },
+    {
+      title: "Quiz Management System",
+      description:
+        "A web application for creating, managing, and taking quizzes. Built with Next.js, it allows administrators to create quizzes and users to participate and view results.",
+      tags: ["Next.js", "React", "Node.js"],
+      image: portfolio,
+      githubLink: "https://github.com/KhoTheProgrammer/quiz-management-system",
+      liveLink: "https://github.com/KhoTheProgrammer/quiz-management-system",
+    },
   ];
 
   return (
