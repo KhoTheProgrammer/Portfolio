@@ -7,16 +7,19 @@ interface SectionProps {
 
 const Resume = ({ id }: SectionProps) => {
   return (
-    <section id={id} className="py-16 overflow-hidden">
+    <section
+      id={id}
+      className="py-16 overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300"
+    >
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-10">
           <div className="md:max-w-[70%] mb-4 md:mb-0 text-left">
-            <h2 className="text-3xl font-bold text-gray-800 relative pb-5 mb-5">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-white relative pb-5 mb-5 transition-colors duration-300">
               Professional Resume
               <span className="absolute bottom-0 left-0 md:left-0 w-12 h-1 bg-blue-500"></span>
             </h2>
-            <p className="text-gray-600 ">
+            <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">
               Explore my education and professional journey in the world of
               software engineering and development.
             </p>
@@ -37,25 +40,28 @@ const Resume = ({ id }: SectionProps) => {
           {/* Left Column */}
           <div className="lg:col-span-1">
             {/* Summary */}
-            <h3 className="text-2xl font-bold text-gray-800  mt-8 mb-5">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mt-8 mb-5 transition-colors duration-300">
               Summary
             </h3>
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
-              <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
-              <h4 className="text-xl font-semibold text-gray-800 ">
+              <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
+              <h4 className="text-xl font-semibold text-gray-800 dark:text-white transition-colors duration-300">
                 Kondwani Padyera
               </h4>
-              <p className="italic text-gray-600  my-2">
+              <p className="italic text-gray-600 dark:text-gray-300 my-2 transition-colors duration-300">
                 Innovative and deadline-driven Software Engineer with a strong
                 foundation in Javascript, ReactJs, NextJs, e.t.c. Passionate
                 about delivering high-quality solutions and adapt in utilizing
                 modern development tools.
               </p>
-              <ul className="list-disc pl-5 text-gray-700  space-y-1">
+              <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1 transition-colors duration-300">
                 <li>Area 36, Lilongwe, Malawi</li>
                 <li>+265 887107311</li>
                 <li>
-                  <a href="mailto:kondwanipadyera@gmail.com">
+                  <a
+                    href="mailto:kondwanipadyera@gmail.com"
+                    className="text-blue-600 dark:text-blue-400 hover:underline"
+                  >
                     kondwanipadyera@gmail.com
                   </a>
                 </li>
@@ -63,22 +69,22 @@ const Resume = ({ id }: SectionProps) => {
             </div>
 
             {/* Education */}
-            <h3 className="text-2xl font-bold text-gray-800  mt-12 mb-5">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mt-12 mb-5 transition-colors duration-300">
               Education
             </h3>
 
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
-              <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
-              <h4 className="text-lg font-semibold uppercase text-gray-800 ">
+              <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
+              <h4 className="text-lg font-semibold uppercase text-gray-800 dark:text-white transition-colors duration-300">
                 Bachelor of Science in Computer Science
               </h4>
-              <h5 className="inline-block text-sm bg-blue-100  px-3 py-1 rounded-full font-semibold my-2">
+              <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
                 2022 - Present
               </h5>
-              <p className="italic text-gray-600 ">
+              <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
                 University of Malawi, Zomba, Malawi
               </p>
-              <p className="text-gray-700  mt-2">
+              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
                 Currently pursuing a Bachelor of Science in Computer Science at
                 the University of Malawi, Zomba. This program has provided me
                 with a solid foundation in computer science principles,
@@ -88,62 +94,88 @@ const Resume = ({ id }: SectionProps) => {
                 technical expertise.
               </p>
             </div>
+
             {/* Work */}
-            <h3 className="text-2xl font-bold text-gray-800  mt-12 mb-5">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mt-12 mb-5 transition-colors duration-300">
               Work Experience
             </h3>
 
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
-              <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
-              <h4 className="text-lg font-semibold uppercase text-gray-800 ">
+              <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
+              <h4 className="text-lg font-semibold uppercase text-gray-800 dark:text-white transition-colors duration-300">
                 DEVELOPER INTERN
               </h4>
-              <h5 className="inline-block text-sm bg-blue-100  px-3 py-1 rounded-full font-semibold my-2">
+              <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
                 2025 - Present
               </h5>
-              <p className="italic text-gray-600 ">
+              <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
                 Infi-Tech
               </p>
-              <p className="text-gray-700  mt-2">
-                Currently working as a Developer Intern at <a href="https://infi-tech.net" target="_blank" rel="noopener" className="text-blue-600">Infi-Tech</a>. During my internship, I have successfully completed a project and contributed to others, collaborating closely with a team of developers. This experience has enabled me to learn and apply new development tools and technologies, enhance my problem-solving skills, and gain valuable insights into real-world software development processes.
+              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
+                Currently working as a Developer Intern at{" "}
+                <a
+                  href="https://infi-tech.net"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  Infi-Tech
+                </a>
+                . During my internship, I have successfully completed a project
+                and contributed to others, collaborating closely with a team of
+                developers. This experience has enabled me to learn and apply
+                new development tools and technologies, enhance my
+                problem-solving skills, and gain valuable insights into
+                real-world software development processes.
               </p>
             </div>
 
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
-              <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
-              <h4 className="text-lg font-semibold uppercase text-gray-800 ">
+              <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
+              <h4 className="text-lg font-semibold uppercase text-gray-800 dark:text-white transition-colors duration-300">
                 DEVELOPER
               </h4>
-              <h5 className="inline-block text-sm bg-blue-100  px-3 py-1 rounded-full font-semibold my-2">
+              <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
                 2025 - Present
               </h5>
-              <p className="italic text-gray-600 ">
+              <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
                 Lockie Visuals
               </p>
-              <p className="text-gray-700  mt-2">
-                Currently working with <a href="https://lockievisuals.vercel.app" target="_blank" rel="noopener" className=" text-blue-600">Lockie Visuals</a> as a developer. At lockie visuals i work with a team of 3 developers where we design and develop web and mobile applications.
+              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
+                Currently working with{" "}
+                <a
+                  href="https://lockievisuals.vercel.app"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  Lockie Visuals
+                </a>{" "}
+                as a developer. At lockie visuals i work with a team of 3
+                developers where we design and develop web and mobile
+                applications.
               </p>
             </div>
           </div>
 
           {/* Right Column */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold text-gray-800  mt-8 mb-5">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mt-8 mb-5 transition-colors duration-300">
               Certifications and Awards
             </h3>
 
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
-              <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
-              <h4 className="text-lg font-semibold text-gray-800 ">
+              <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-white transition-colors duration-300">
                 COMSOC Voting System Developer
               </h4>
-              <h5 className="inline-block text-sm bg-blue-100  px-3 py-1 rounded-full font-semibold my-2">
+              <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
                 2025
               </h5>
-              <p className="italic text-gray-600 ">
+              <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
                 UNIMA Computing Society
               </p>
-              <p className="text-gray-700  mt-2">
+              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
                 Designed and developed a secure online voting platform for the
                 Computing Society, streamlining student elections with
                 authentication and real-time results.
@@ -151,15 +183,17 @@ const Resume = ({ id }: SectionProps) => {
             </div>
 
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
-              <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
-              <h4 className="text-lg font-semibold text-gray-800 ">
+              <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-white transition-colors duration-300">
                 Introduction to DHIS2
               </h4>
-              <h5 className="inline-block text-sm bg-blue-100  px-3 py-1 rounded-full font-semibold my-2">
+              <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
                 2024
               </h5>
-              <p className="italic text-gray-600 ">DHIS2</p>
-              <p className="text-gray-700  mt-2">
+              <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
+                DHIS2
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
                 Completed a comprehensive overview of the DHIS2 platform,
                 focusing on data collection, health information systems, and
                 dashboard visualization.
@@ -167,34 +201,34 @@ const Resume = ({ id }: SectionProps) => {
             </div>
 
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
-              <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
-              <h4 className="text-lg font-semibold text-gray-800 ">
+              <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-white transition-colors duration-300">
                 Dean's List and Vice Chancellor's Awards
               </h4>
-              <h5 className="inline-block text-sm bg-blue-100  px-3 py-1 rounded-full font-semibold my-2">
+              <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
                 2023–2024
               </h5>
-              <p className="italic text-gray-600 ">
+              <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
                 University of Malawi
               </p>
-              <p className="text-gray-700  mt-2">
+              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
                 Recognized for outstanding academic achievement, maintaining a
                 GPA above 3.8 for two consecutive years.
               </p>
             </div>
 
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
-              <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
-              <h4 className="text-lg font-semibold text-gray-800 ">
+              <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-white transition-colors duration-300">
                 Introduction to Java
               </h4>
-              <h5 className="inline-block text-sm bg-blue-100  px-3 py-1 rounded-full font-semibold my-2">
+              <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
                 2023
               </h5>
-              <p className="italic text-gray-600 ">
+              <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
                 Sololearn
               </p>
-              <p className="text-gray-700  mt-2">
+              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
                 Gained foundational knowledge of Java programming including OOP
                 concepts, control structures, and data handling through
                 interactive modules.
@@ -202,15 +236,17 @@ const Resume = ({ id }: SectionProps) => {
             </div>
 
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
-              <div className="absolute w-4 h-4 rounded-full bg-white border-2 border-blue-700 -left-[9px] top-0"></div>
-              <h4 className="text-lg font-semibold text-gray-800 ">
+              <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-white transition-colors duration-300">
                 Seeds for the Future
               </h4>
-              <h5 className="inline-block text-sm bg-blue-100  px-3 py-1 rounded-full font-semibold my-2">
+              <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
                 2023
               </h5>
-              <p className="italic text-gray-600 ">Huawei</p>
-              <p className="text-gray-700  mt-2">
+              <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
+                Huawei
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
                 Participated in Huawei's prestigious global ICT program, gaining
                 exposure to emerging technologies such as cloud computing, AI,
                 and 5G networks.

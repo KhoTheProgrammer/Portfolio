@@ -28,16 +28,19 @@ const Skill: React.FC<SkillProps> = ({ icon: Icon, title, categories }) => {
           </div>
 
           {/* Back */}
-          <div className="absolute w-full h-full bg-white text-gray-800 rounded-xl p-4 overflow-y-auto [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div className="absolute w-full h-full bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-xl p-4 overflow-y-auto [transform:rotateY(180deg)] [backface-visibility:hidden] transition-colors duration-300">
             {categories.map((category, index) => (
               <div key={index} className="mb-4">
-                <h4 className="text-blue-600 font-semibold flex items-center gap-2 mb-1">
+                <h4 className="text-blue-600 dark:text-blue-400 font-semibold flex items-center gap-2 mb-1 transition-colors duration-300">
                   <category.icon />
                   {category.name}
                 </h4>
                 <ul className="list-none pl-2">
                   {category.items.map((item, idx) => (
-                    <li key={idx} className="text-sm py-1">
+                    <li
+                      key={idx}
+                      className="text-sm py-1 text-gray-700 dark:text-gray-300 transition-colors duration-300"
+                    >
                       {item}
                     </li>
                   ))}

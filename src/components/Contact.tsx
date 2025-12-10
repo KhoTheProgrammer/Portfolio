@@ -6,7 +6,7 @@ interface SectionProps {
   id: string;
 }
 
-const Contact = ({id}: SectionProps) => {
+const Contact = ({ id }: SectionProps) => {
   const [state, handleSubmit] = useForm("xqaqvgpp");
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -22,15 +22,18 @@ const Contact = ({id}: SectionProps) => {
   }, [state.succeeded]);
 
   return (
-    <section id={id} className="pb-32 pt-16">
+    <section
+      id={id}
+      className="pb-32 pt-16 bg-white dark:bg-gray-900 transition-colors duration-300"
+    >
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="t mb-12">
-          <h2 className="text-3xl font-bold text-gray-800  mb-4 relative pb-4">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4 relative pb-4 transition-colors duration-300">
             Contact
             <span className="absolute bottom-0 left-1 transform -translate-x-1 w-12 h-1 bg-blue-500"></span>
           </h2>
-          <p className="text-gray-600 ">
+          <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">
             Feel free to reach out to me for any collaboration, project
             inquiries, or questions. I'm always open to discussing new
             opportunities and ideas.
