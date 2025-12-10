@@ -1,13 +1,11 @@
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import type Project from "../types/Index";
 import projects from "../constants/Projects";
-
 
 interface SectionProps {
   id: string;
 }
 
-const ProjectSection = ({id}: SectionProps) => {
+const ProjectSection = ({ id }: SectionProps) => {
   return (
     <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900" id={id}>
       <div className="max-w-6xl mx-auto">
@@ -59,22 +57,26 @@ const ProjectSection = ({id}: SectionProps) => {
                 </div>
 
                 <div className="flex space-x-4">
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                  >
-                    <FiGithub className="mr-2" /> Code
-                  </a>
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                  >
-                    <FiExternalLink className="mr-2" /> Live Demo
-                  </a>
+                  {project.githubLink && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    >
+                      <FiGithub className="mr-2" /> GitHub
+                    </a>
+                  )}
+                  {project.liveLink && (
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    >
+                      <FiExternalLink className="mr-2" /> Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

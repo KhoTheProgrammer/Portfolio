@@ -33,8 +33,7 @@ const projects: Project[] = [
       image: dhis2,
       githubLink:
         "https://github.com/KhoTheProgrammer/Dhis2-Patient-Reminder.git",
-      liveLink:
-        "https://github.com/KhoTheProgrammer/Dhis2-Patient-Reminder.git",
+      
     },
     {
       title: "Unima COMSOC voting system",
@@ -42,7 +41,6 @@ const projects: Project[] = [
         "An online voting sytem used by the University of Malawi's Computing Society to vote for various positions at the society",
       tags: ["NextJs", "Tailwind CSS", "Supabase"],
       image: voting,
-      githubLink: "https://voting-system-lake.vercel.app/",
       liveLink: "https://voting-system-lake.vercel.app/",
     },
     {
@@ -53,8 +51,7 @@ const projects: Project[] = [
       image: solar,
       githubLink:
         "https://github.com/KhoTheProgrammer/Solar-sytem-application.git",
-      liveLink:
-        "https://github.com/KhoTheProgrammer/Solar-sytem-application.git",
+      
     },
     {
       title: "Quiz Management System",
@@ -65,6 +62,7 @@ const projects: Project[] = [
       githubLink: "https://github.com/KhoTheProgrammer/quiz-management-system",
       liveLink: "https://quiz-management-system-jet.vercel.app",
     },
+    
   ];
 
   export default projects;
