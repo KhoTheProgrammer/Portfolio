@@ -5,10 +5,10 @@ import About from "./components/About";
 import SkillsSection from "./components/SkillSection";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
-import Project from "./components/Project";
 import Footer from "./components/Footer";
 import Menu from "./components/Menu";
 import BackToTop from "./components/BackToTop";
+import ProjectSection from "./components/Project";
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -30,7 +30,7 @@ const App = () => {
         <About id="about" />
         <Resume id="resume" />
         <SkillsSection id="skills" />
-        <Project id="project" />
+        <ProjectSection id="project" />
         <Contact id="contact" />
       <BackToTop></BackToTop>
       </div>
