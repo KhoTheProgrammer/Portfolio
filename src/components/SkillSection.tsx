@@ -23,14 +23,17 @@ const skillsData = [
         icon: FaCode,
         name: "Languages",
         items: [
-          "Java",
           "JavaScript",
           "TypeScript",
+          "Python",
+          "Kotlin",
+          "Java",
           "C++",
           "C",
-          "Python",
+          "GDScript",
           "Assembly Language",
           "Matlab",
+          "Dart"
         ],
       },
     ],
@@ -38,50 +41,76 @@ const skillsData = [
 
   {
     icon: FaDatabase,
-    title: "Frameworks",
+    title: "Frameworks & Libraries",
     categories: [
       {
         icon: FaLaptopCode,
         name: "Frontend",
-        items: ["React", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "OpenGL"],
+        items: [
+          "React",
+          "Next.js",
+          "Jetpack Compose",
+          "HTML5",
+          "CSS3",
+          "Tailwind CSS",
+          "Material Design",
+          "OpenGL",
+          "Flutter",
+        ],
       },
       {
         icon: FaServer,
         name: "Backend",
-        items: ["Nest Js", "Express Js", "Node Js"],
+        items: [
+          "Django",
+          "Django REST Framework",
+          "Express.js",
+          "Node.js",
+          "Nest.js",
+          "Laravel",
+        ],
       },
     ],
   },
   {
     icon: FaToolbox,
-    title: "  Tools and Database",
+    title: "Databases & Tools",
     categories: [
       {
         icon: FaDatabase,
         name: "Databases",
-        items: ["Postgresql", "Supabase", "Firebase"],
+        items: ["PostgreSQL", "PostGIS", "Supabase", "Firebase", "SQLite"],
       },
       {
         icon: FaTools,
-        name: "Tools",
-        items: ["Git", "Vs Code", "Netlify", "Vercel", "Render", "Docker"],
+        name: "Tools & Platforms",
+        items: [
+          "Git",
+          "VS Code",
+          "Android Studio",
+          "Godot Engine",
+          "Docker",
+          "Netlify",
+          "Vercel",
+          "Render",
+        ],
       },
     ],
   },
   {
     icon: FaCogs,
-    title: "OS",
+    title: "Specialized Technologies",
     categories: [
       {
         icon: FaWindows,
         name: "Operating Systems",
-        items: ["Ubuntu", "Windows", "Kali Linux"],
+        items: ["Ubuntu", "Windows", "Kali Linux", "Android"],
       },
     ],
   },
 ];
 
-const SkillsSection = ({id}:SectionProps) => (
+const SkillsSection = ({ id }: SectionProps) => (
   <section id={id} className="bg-[#f5f8fd] py-16">
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
