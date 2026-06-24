@@ -1,5 +1,5 @@
 import { FiDownload } from "react-icons/fi";
-import resume from "../assets/files/Resume.pdf";
+import resume from "../assets/files/NewResume.pdf";
 
 interface SectionProps {
   id: string;
