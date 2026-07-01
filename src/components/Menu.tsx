@@ -7,8 +7,11 @@ interface MenuProps {
 
 const Menu = ({ toggleSidebar, isSidebarOpen }: MenuProps) => {
   return (
-    <div
-      className="fixed top-[15px] right-[15px] z-[9998] text-white bg-blue-500 hover:bg-blue-600 rounded-full p-1 lg:hidden cursor-pointer transition-colors duration-300"
+    <button
+      type="button"
+      aria-label={isSidebarOpen ? "Close menu" : "Open menu"}
+      aria-expanded={isSidebarOpen}
+      className="fixed top-[15px] right-[15px] z-[9998] text-white bg-blue-500 hover:bg-blue-600 rounded-full p-1 lg:hidden cursor-pointer transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
       onClick={toggleSidebar}
     >
       {isSidebarOpen ? (
@@ -16,7 +19,7 @@ const Menu = ({ toggleSidebar, isSidebarOpen }: MenuProps) => {
       ) : (
         <IoMdMenu className="w-[30px] h-[30px]" />
       )}
-    </div>
+    </button>
   );
 };
 
