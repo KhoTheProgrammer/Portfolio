@@ -49,20 +49,34 @@ const Resume = ({ id }: SectionProps) => {
                 Kondwani Padyera
               </h4>
               <p className="italic text-gray-600 dark:text-gray-300 my-2 transition-colors duration-300">
-                Innovative and deadline-driven Software Engineer with a strong
-                foundation in Javascript, ReactJs, NextJs, e.t.c. Passionate
-                about delivering high-quality solutions and adapt in utilizing
-                modern development tools.
+                Highly motivated and results-driven Full Stack Developer with
+                hands-on experience in designing, developing, and deploying
+                dynamic web applications. Strong background in modern web
+                technologies, including React, Tailwind CSS, and NextJS,
+                complemented by a solid foundation in programming languages
+                such as Java, JavaScript, and C++. Enthusiastic about
+                leveraging skills in collaborative, agile environments to
+                develop innovative solutions that drive business objectives.
               </p>
               <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1 transition-colors duration-300">
-                <li>Area 36, Lilongwe, Malawi</li>
-                <li>+265 887107311</li>
+                <li>Lilongwe, Malawi</li>
+                <li>+265 980 636 311</li>
                 <li>
                   <a
                     href="mailto:kondwanipadyera@gmail.com"
                     className="text-blue-600 dark:text-blue-400 hover:underline"
                   >
                     kondwanipadyera@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://khoopadyera.me"
+                    target="_blank"
+                    rel="noopener"
+                    className="text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    khoopadyera.me
                   </a>
                 </li>
               </ul>
@@ -79,19 +93,20 @@ const Resume = ({ id }: SectionProps) => {
                 Bachelor of Science in Computer Science
               </h4>
               <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
-                2022 - Present
+                2022 - 2026
               </h5>
               <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
                 University of Malawi, Zomba, Malawi
               </p>
               <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
-                Currently pursuing a Bachelor of Science in Computer Science at
-                the University of Malawi, Zomba. This program has provided me
-                with a solid foundation in computer science principles,
-                programming languages, and software development methodologies. I
-                have gained hands-on experience in various programming languages
-                and frameworks, enhancing my problem-solving skills and
-                technical expertise.
+                Pursuing a Bachelor of Science in Computer Science at the
+                University of Malawi, Zomba. Named to the Dean's List for
+                Academic Excellence, achieving a GPA of 3.8 in the first year
+                and 3.9 in the second year. This program has provided me with
+                a solid foundation in computer science principles, programming
+                languages, and software development methodologies, along with
+                hands-on experience across various frameworks that has
+                sharpened my problem-solving skills and technical expertise.
               </p>
             </div>
 
@@ -103,16 +118,16 @@ const Resume = ({ id }: SectionProps) => {
             <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
               <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
               <h4 className="text-lg font-semibold uppercase text-gray-800 dark:text-white transition-colors duration-300">
-                DEVELOPER INTERN
+                FULL STACK DEVELOPER INTERN
               </h4>
               <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
-                2025 - Present
+                2025
               </h5>
               <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
-                Infi-Tech
+                Infi Tech
               </p>
               <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
-                Currently working as a Developer Intern at{" "}
+                Working as a Full Stack Developer Intern at{" "}
                 <a
                   href="https://infi-tech.net"
                   target="_blank"
@@ -121,12 +136,8 @@ const Resume = ({ id }: SectionProps) => {
                 >
                   Infi-Tech
                 </a>
-                . During my internship, I have successfully completed a project
-                and contributed to others, collaborating closely with a team of
-                developers. This experience has enabled me to learn and apply
-                new development tools and technologies, enhance my
-                problem-solving skills, and gain valuable insights into
-                real-world software development processes.
+                , responsible for designing and implementing fullstack
+                applications, more especially SaaS applications.
               </p>
             </div>
 
@@ -136,24 +147,48 @@ const Resume = ({ id }: SectionProps) => {
                 DEVELOPER
               </h4>
               <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
-                2025 - Present
+                2024
               </h5>
               <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
-                Lockie Visuals
+                Konektus &mdash; School Project
               </p>
               <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
-                Currently working with{" "}
-                <a
-                  href="https://lockievisuals.vercel.app"
-                  target="_blank"
-                  rel="noopener"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  Lockie Visuals
-                </a>{" "}
-                as a developer. At lockie visuals i work with a team of 3
-                developers where we design and develop web and mobile
-                applications.
+                Developed a platform aimed at connecting local farmers with
+                potential buyers.
+              </p>
+            </div>
+
+            <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
+              <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
+              <h4 className="text-lg font-semibold uppercase text-gray-800 dark:text-white transition-colors duration-300">
+                DEVELOPER
+              </h4>
+              <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
+                2024
+              </h5>
+              <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
+                DHIS2 Reminder Application &mdash; School Project
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
+                Created an application for sending health reminders to users,
+                enhancing healthcare accessibility.
+              </p>
+            </div>
+
+            <div className="relative pl-6 pb-6 border-l-2 border-blue-700">
+              <div className="absolute w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-700 -left-[9px] top-0 transition-colors duration-300"></div>
+              <h4 className="text-lg font-semibold uppercase text-gray-800 dark:text-white transition-colors duration-300">
+                DEVELOPER
+              </h4>
+              <h5 className="inline-block text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-semibold my-2 transition-colors duration-300">
+                2024
+              </h5>
+              <p className="italic text-gray-600 dark:text-gray-300 transition-colors duration-300">
+                Personal Portfolio
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
+                Designed and implemented a personal portfolio website to
+                showcase projects and skills.
               </p>
             </div>
           </div>
