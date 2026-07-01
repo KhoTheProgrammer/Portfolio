@@ -19,7 +19,7 @@ const About = ({ id }: SectionProps) => {
 
         <div className="flex flex-col lg:flex-row items-start gap-8">
           {/* Image */}
-          <div className="lg:w-1/3" data-aos="fade-right">
+          <div className="lg:w-1/3">
             <img
               src={profilePic}
               alt="Profile"
