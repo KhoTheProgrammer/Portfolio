@@ -1,10 +1,4 @@
-import {
-  FaGithub,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaGithub, FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import {
   BiHome,
   BiUser,
@@ -61,13 +55,7 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
               <FaFacebook />
             </a>
             <a
-              href="#"
-              className="bg-gray-200 dark:bg-[#212431] hover:bg-[#149ddd] hover:text-white p-2 rounded-full transition-colors duration-300"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="https://wa.me/265887107311"
+              href="https://wa.me/265980636311"
               className="bg-gray-200 dark:bg-[#212431] hover:bg-[#149ddd] hover:text-white p-2 rounded-full transition-colors duration-300"
               target="_blank "
               rel="noopener noreferrer"
@@ -96,7 +84,8 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
               <li key={item.id}>
                 <button
                   onClick={() => handleClick(item.id)}
-                  className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-[#1a1f28] rounded w-full text-left transition-colors duration-300"
+                  aria-label={item.text}
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-[#1a1f28] rounded w-full text-left transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
                 >
                   {
                     <item.icon.type className="text-2xl hover:text-[#149ddd] text-gray-500 dark:text-[#a8a9b4] transition-colors duration-300" />
