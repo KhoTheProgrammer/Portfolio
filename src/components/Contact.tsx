@@ -53,7 +53,7 @@ const Contact = ({ id }: SectionProps) => {
                     Location:
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Area 36, Lilongwe, Malawi
+                    Lilongwe, Malawi
                   </p>
                 </div>
               </div>
@@ -81,7 +81,7 @@ const Contact = ({ id }: SectionProps) => {
                     Phone:
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400">
-                    +265 887 107 311
+                    +265 980 636 311
                   </p>
                 </div>
               </div>
