@@ -14,6 +14,8 @@
 }
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme{
     --font-opensans: 'Open Sans', sans-serif;
     --font-raleway: "Raleway", sans-serif;
