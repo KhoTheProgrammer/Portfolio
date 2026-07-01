@@ -1,6 +1,6 @@
 import { ReactTyped } from "react-typed";
 import home from "../assets/home.jpg";
-import resume from "../assets/files/Resume.pdf";
+import resume from "../assets/files/NewResume.pdf";
 import { FiDownload } from "react-icons/fi";
 
 interface SectionProps {
