@@ -1,5 +1,5 @@
 import Project from "../types/Index";
-import konneckus from "../assets/Konnektus.jpg";
+import konneckus from "../assets/konnektus.png";
 import portfolio from "../assets/portfolio.jpg";
 import dhis2 from "../assets/dhis2.jpg";
 import voting from "../assets/voting.jpg";
@@ -9,27 +9,23 @@ import racing from "../assets/racing-game.png";
 import smart_farmer from "../assets/smart-famer.png";
 import lecturer_feedback from "../assets/lecturer-feedback.png";
 import donate_eazy from "../assets/donate eazy.jpg";
+import tulame from "../assets/tulame.jpeg";
 
 const projects: Project[] = [
   {
-    title: "Smart Farmer (Mlimi Wanzeru)",
+    title: "Tulame Medicine Store",
     description:
-      "A comprehensive agricultural advisory platform for Malawian smallholder farmers. Provides location-based crop suitability analysis, planting calendars, weather data integration via NASA POWER API, soil analysis through SoilGrids, and elevation-based recommendations using SRTM data. Built with Django REST API backend and React frontend.",
+      "Pharmacy inventory system that tracks every sale and stock movement in real time — so your shelves, your records, and your team finally agree.",
     tags: [
-      "React",
-      "Django",
-      "Python",
+      "Expo",
+      "NestJS",
       "PostgreSQL",
-      "Tailwind CSS",
-      "GIS",
-      "PostGIS",
-      "GeoDjango",
     ],
-    image: smart_farmer,
-    githubLink: "https://github.com/KhoTheProgrammer/smart-farmer-frontend",
-    liveLink: "https://smart-farmer-frontend-mu.vercel.app/",
+    image: tulame,
+    githubLink: "https://github.com/KhoTheProgrammer/tulame-medicine-store",
+    liveLink: "https://tulame.netlify.app/",
   },
-  {
+    {
     title: "KonnectUs",
     description:
       "An online platform where farmers can sell their products to buyers directly without middlemen",
@@ -47,7 +43,7 @@ const projects: Project[] = [
     githubLink: "https://github.com/KhoTheProgrammer/quiz-management-system",
     liveLink: "https://quiz-management-system-jet.vercel.app",
   },
-  {
+   {
     title: "UNIMA Lecturer Feedback Auto-Fill Extension",
     description:
       "A browser extension for University of Malawi students that automates the tedious lecturer evaluation process. Features one-click auto-fill, customizable rating preferences, optional comment generation, and batch processing for multiple evaluations. Includes a modern UI with privacy-focused local operation.",
@@ -55,6 +51,24 @@ const projects: Project[] = [
     image: lecturer_feedback,
     githubLink: "https://github.com/KhoTheProgrammer/lecturer-feedback",
     liveLink: "https://unima-lecturer-feedback.netlify.app",
+  },
+  {
+    title: "Smart Farmer (Mlimi Wanzeru)",
+    description:
+      "A comprehensive agricultural advisory platform for Malawian smallholder farmers. Provides location-based crop suitability analysis, planting calendars, weather data integration via NASA POWER API, soil analysis through SoilGrids, and elevation-based recommendations using SRTM data. Built with Django REST API backend and React frontend.",
+    tags: [
+      "React",
+      "Django",
+      "Python",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "GIS",
+      "PostGIS",
+      "GeoDjango",
+    ],
+    image: smart_farmer,
+    githubLink: "https://github.com/KhoTheProgrammer/smart-farmer-frontend",
+    liveLink: "https://smart-farmer-frontend-mu.vercel.app/",
   },
   {
     title: "DonateEasy",
