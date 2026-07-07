@@ -1,61 +1,74 @@
+import { FiServer, FiLayout, FiSmartphone, FiMapPin } from "react-icons/fi";
 import profilePic from "../assets/kho2.jpg";
+import Reveal from "./Reveal";
+import SectionHeading from "./SectionHeading";
 
 interface SectionProps {
   id: string;
 }
+
+const focus = [
+  { icon: FiServer, title: "Backend", detail: "Node.js, NestJS, Express, Django REST" },
+  { icon: FiLayout, title: "Frontend", detail: "React, Next.js, TypeScript, Tailwind" },
+  { icon: FiSmartphone, title: "Mobile", detail: "Expo, Kotlin & Jetpack Compose, Flutter" },
+];
+
 const About = ({ id }: SectionProps) => {
   return (
-    <section
-      id={id}
-      className="py-16 overflow-hidden px-8 bg-white dark:bg-gray-900 transition-colors duration-300"
-    >
-      <div className="container mx-auto px-4">
-        {/* Section Title */}
-        <div className="mb-8 relative pb-6 text-left">
-          <h2 className="text-3xl font-bold text-[#173b6c] dark:text-white inline-block relative after:content-[''] after:block after:w-12 after:h-[3px] after:bg-[#149ddd] after:absolute after:-bottom-3 after:left-0 mb-4 transition-colors duration-300">
-            About
-          </h2>
-        </div>
+    <section id={id} className="relative bg-white py-24 dark:bg-ink">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <Reveal>
+          <SectionHeading eyebrow="About me" title="Turning ideas into software" />
+        </Reveal>
 
-        <div className="flex flex-col lg:flex-row items-start gap-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Image */}
-          <div className="lg:w-1/3">
-            <img
-              src={profilePic}
-              alt="Profile"
-              className="w-full h-auto rounded"
-            />
-          </div>
+          <Reveal className="relative mx-auto w-full max-w-sm">
+            <div className="rounded-3xl bg-gradient-to-tr from-violet-500/20 to-cyan-400/20 p-2">
+              <img
+                src={profilePic}
+                alt="Kondwani Padyera"
+                loading="lazy"
+                className="aspect-square w-full rounded-2xl object-cover"
+              />
+            </div>
+            <div className="glass mt-4 flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
+              <FiMapPin className="text-violet-500" /> Lilongwe, Malawi
+            </div>
+          </Reveal>
 
-          {/* Text Content */}
-          <div className="lg:w-2/3 pt-4 lg:pt-0">
-            <h3 className="text-2xl font-bold text-[#173b6c] dark:text-white mb-4 transition-colors duration-300">
-              Software Engineer
+          {/* Text */}
+          <Reveal delay={120}>
+            <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white">
+              Software Engineer &amp; CS Graduand
             </h3>
-            <p className="italic mb-6 text-gray-700 dark:text-gray-300 transition-colors duration-300">
-              Dedicated software engineer with expertise in Javascript, NestJs,
-              and React.
+            <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-400">
+              Software Engineer with professional experience developing scalable
+              web and mobile applications using JavaScript, TypeScript, React,
+              Next.js, NestJS, Express, and PostgreSQL. I'm experienced in
+              translating business requirements into production-ready software,
+              deploying applications with Docker, and collaborating in agile
+              development teams.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 transition-colors duration-300">
-              Hi, I’m Kondwani — a third-year Computer Science student with a
-              passion for software development and a knack for building
-              efficient backend systems using technologies like Javascript and
-              NestJS. I’ve worked on web chat apps, explored OpenGL graphics,
-              and continuously sharpen my problem-solving skills through
-              academic projects and personal experimentation. My core skills
-              include:<br></br>{" "}
-              <span className="font-bold text-black dark:text-white transition-colors duration-300">
-                Backend
-              </span>
-              : Javascript, ExpressJs and NestJS, <br></br>
-              <span className="font-bold text-black dark:text-white transition-colors duration-300">
-                Frontend
-              </span>
-              : ReactJS and NextJs
-              <br></br>When I’m not coding, you’ll find me playing FIFA,
-              learning new tech, or tweaking my dev setup.
+            <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-400">
+              I'm passionate about backend engineering, cloud technologies,
+              AI-powered applications, and building software that solves
+              real-world problems.
             </p>
-          </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {focus.map(({ icon: Icon, title, detail }) => (
+                <div
+                  key={title}
+                  className="rounded-2xl border border-slate-200 bg-slate-50/50 p-4 transition-colors hover:border-violet-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-violet-500/40"
+                >
+                  <Icon className="text-xl text-violet-500" />
+                  <p className="mt-3 font-semibold text-slate-900 dark:text-white">{title}</p>
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{detail}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
