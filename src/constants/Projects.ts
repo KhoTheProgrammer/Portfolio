@@ -36,7 +36,7 @@ const projects: Project[] = [
     tags: ["React", "FireBase", "Tailwind CSS"],
     image: konneckus,
     githubLink: "https://github.com/KhoTheProgrammer/KonnectUs.git",
-    liveLink: "https://konektus.netlify.app/",
+    liveLink: "https://konnectus-xi.vercel.app",
   },
   {
     title: "Quiz Management System",
