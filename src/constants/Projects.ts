@@ -83,7 +83,7 @@ const projects: Project[] = [
       "Game Physics",
     ],
     image: racing,
-    githubLink: "https://github.com/KhoTheProgrammer/racing-game",
+    githubLink: "https://github.com/KhoTheProgrammer/3D-mobile-racing-game",
   },
   {
     title: "Unima COMSOC voting system",
