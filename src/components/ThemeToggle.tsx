@@ -1,4 +1,4 @@
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FiSun, FiMoon } from "react-icons/fi";
 import { useTheme } from "../contexts/ThemeContext";
 
 const ThemeToggle = () => {
@@ -7,13 +7,13 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-4 right-20 lg:right-4 z-[10000] p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+      className="grid h-10 w-10 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/10"
       aria-label="Toggle theme"
     >
       {theme === "light" ? (
-        <FaMoon className="text-gray-700 dark:text-yellow-400 text-xl" />
+        <FiMoon className="text-lg" />
       ) : (
-        <FaSun className="text-yellow-500 dark:text-yellow-400 text-xl" />
+        <FiSun className="text-lg text-amber-400" />
       )}
     </button>
   );
