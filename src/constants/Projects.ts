@@ -11,7 +11,7 @@ import lecturer_feedback from "../assets/lecturer-feedback.png";
 import donate_eazy from "../assets/donate eazy.jpg";
 import tulame from "../assets/tulame.jpeg";
 import infisend from "../assets/infisend.png";
-
+import aces from "../assets/aces.png";
 
 const projects: Project[] = [
     {
@@ -31,6 +31,27 @@ const projects: Project[] = [
     ],
     image: infisend,
     liveLink: "https://infisend.infi-tech.cloud",
+  },
+{
+    title: "ACES Gaming Platform",
+    description:
+      "A raffle and digital-wallet platform for the Malawian market, with a web app, an admin dashboard and an Expo mobile app. Users top up a MWK wallet through PayChangu (mobile money or card), use it to enter standard numbered raffles and team-based Blue vs Red raffles, and withdraw winnings the same way. The backend is 9 NestJS services behind one API gateway, with a separate PostgreSQL schema for each service, RabbitMQ events and live updates over Socket.io. It also covers a wallet ledger, a step-by-step KYC check that has to pass before withdrawals, affiliates, notifications, a finance service, and an admin back office. Secrets are kept in Vault and files in self-hosted MinIO storage.",
+    tags: [
+      "Next.js",
+      "NestJS",
+      "Expo",
+      "React Native",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "RabbitMQ",
+      "Socket.io",
+      "Docker",
+      "Turborepo",
+    ],
+    image: aces,
+    liveLink: "https://aces.mw",
   },
   {
     title: "Tulame Medicine Store",
