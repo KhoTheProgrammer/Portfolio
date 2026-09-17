@@ -10,8 +10,28 @@ import smart_farmer from "../assets/smart-famer.png";
 import lecturer_feedback from "../assets/lecturer-feedback.png";
 import donate_eazy from "../assets/donate eazy.jpg";
 import tulame from "../assets/tulame.jpeg";
+import infisend from "../assets/infisend.png";
+
 
 const projects: Project[] = [
+    {
+    title: "InfiSend",
+    description:
+      "One API and dashboard for sending SMS (Africa's Talking) and email (SMTP) from a prepaid MWK wallet, billed per message. Sends are queued and processed in the background, with retries and a circuit breaker around each provider. It also covers bulk and scheduled sends, Handlebars templates, delivery webhooks, KYC checks before going live, a sandbox mode that behaves like live sending, and an admin back office for pricing, revenue and account management.",
+    tags: [
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "BullMQ",
+      "Docker",
+      "Turborepo",
+    ],
+    image: infisend,
+    liveLink: "https://infisend.infi-tech.cloud",
+  },
   {
     title: "Tulame Medicine Store",
     description:
