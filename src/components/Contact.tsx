@@ -39,14 +39,12 @@ const Contact = ({ id }: SectionProps) => {
   return (
     <section id={id} className="relative bg-white py-24 dark:bg-ink">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Contact"
-            title="Let's build something together"
-            subtitle="Open to collaborations, freelance work, and new opportunities. Drop me a message — I usually reply within a day."
-            align="center"
-          />
-        </Reveal>
+        <SectionHeading
+          eyebrow="Contact"
+          title="Let's build something together"
+          subtitle="Open to collaborations, freelance work, and new opportunities. Drop me a message — I usually reply within a day."
+          align="center"
+        />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr]">
           {/* Info */}
@@ -83,7 +81,8 @@ const Contact = ({ id }: SectionProps) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="grid h-11 w-11 place-items-center rounded-full border border-slate-200 text-slate-600 transition-all hover:-translate-y-1 hover:border-violet-400 hover:text-violet-600 dark:border-white/10 dark:text-slate-300 dark:hover:border-violet-400 dark:hover:text-white"
+                  data-magnetic
+                  className="grid h-11 w-11 place-items-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:border-violet-400 hover:text-violet-600 dark:border-white/10 dark:text-slate-300 dark:hover:border-violet-400 dark:hover:text-white"
                 >
                   <Icon className="text-lg" />
                 </a>
@@ -136,7 +135,8 @@ const Contact = ({ id }: SectionProps) => {
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-violet-500/25 transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                  data-magnetic
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-violet-500/25 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                 >
                   {state.submitting ? "Sending..." : <>Send message <FiSend /></>}
                 </button>

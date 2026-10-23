@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
+import { gsap, useGSAP, prefersReducedMotion } from "../lib/gsap";
 
 interface RevealProps {
   children: ReactNode;
@@ -9,43 +10,32 @@ interface RevealProps {
 }
 
 /**
- * Fades + slides its children in the first time they scroll into view.
- * Falls back to visible immediately if IntersectionObserver is unavailable
- * or the user prefers reduced motion (handled in CSS).
+ * Fades, lifts and de-blurs its children the first time they scroll into view.
+ * Skipped entirely when the user prefers reduced motion.
  */
 const Reveal = ({ children, className = "", delay = 0, as = "div" }: RevealProps) => {
   const ref = useRef<HTMLElement | null>(null);
-  const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-    if (typeof IntersectionObserver === "undefined") {
-      setVisible(true);
-      return;
-    }
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
+  useGSAP(
+    () => {
+      if (prefersReducedMotion()) return;
+      gsap.from(ref.current, {
+        autoAlpha: 0,
+        y: 60,
+        scale: 0.97,
+        filter: "blur(8px)",
+        duration: 1.1,
+        delay: delay / 1000,
+        clearProps: "filter",
+        scrollTrigger: { trigger: ref.current, start: "top 88%", once: true },
+      });
+    },
+    { scope: ref }
+  );
 
   const Tag = as as "div";
   return (
-    <Tag
-      ref={ref as React.RefObject<HTMLDivElement>}
-      className={`reveal ${visible ? "is-visible" : ""} ${className}`}
-      style={{ animationDelay: `${delay}ms` }}
-    >
+    <Tag ref={ref as React.RefObject<HTMLDivElement>} className={className}>
       {children}
     </Tag>
   );
