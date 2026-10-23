@@ -68,8 +68,7 @@ const Navbar = () => {
         x: el.getBoundingClientRect().left - list.getBoundingClientRect().left,
         width: el.offsetWidth,
         autoAlpha: 1,
-        duration: 0.6,
-        ease: "elastic.out(1, 0.75)",
+        duration: 0.5,
       });
     },
     { dependencies: [active] }
@@ -94,7 +93,7 @@ const Navbar = () => {
       ref={headerRef}
       className={`fixed top-0 inset-x-0 z-50 transition-[background-color,box-shadow] duration-300 ${
         scrolled
-          ? "glass shadow-[0_8px_30px_-12px_rgba(0,0,0,0.25)]"
+          ? "border-b border-slate-200/80 bg-white/85 backdrop-blur-md dark:border-white/10 dark:bg-ink/85"
           : "bg-transparent"
       }`}
     >
@@ -105,11 +104,11 @@ const Navbar = () => {
           className="nav-item group flex items-center gap-2 font-display text-lg font-bold tracking-tight"
           aria-label="Back to top"
         >
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-400 text-white shadow-lg shadow-violet-500/30">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent-500 text-white">
             K
           </span>
           <span className="text-slate-900 dark:text-white">
-            Kondwani<span className="gradient-text">.</span>
+            Kondwani<span className="text-accent-600 dark:text-accent-400">.</span>
           </span>
         </button>
 
@@ -118,7 +117,7 @@ const Navbar = () => {
           <span
             ref={pillRef}
             aria-hidden
-            className="invisible absolute inset-y-0 left-0 -z-10 rounded-full bg-violet-500/10 ring-1 ring-violet-500/30 dark:bg-white/5"
+            className="invisible absolute inset-y-0 left-0 -z-10 rounded-full bg-accent-500/10 ring-1 ring-accent-500/30 dark:bg-white/5"
           />
           {links.map((link) => (
             <li key={link.id} className="nav-item">
@@ -144,7 +143,7 @@ const Navbar = () => {
           <button
             onClick={() => go("contact")}
             data-magnetic
-            className="hidden rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 sm:inline-block"
+            className="hidden rounded-full bg-accent-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-700 sm:inline-block"
           >
             Let's talk
           </button>
@@ -172,7 +171,7 @@ const Navbar = () => {
                 onClick={() => go(link.id)}
                 className={`w-full rounded-xl px-4 py-3 text-left text-base font-medium transition-colors ${
                   active === link.id
-                    ? "bg-violet-500/10 text-violet-600 dark:text-violet-300"
+                    ? "bg-accent-500/10 text-accent-700 dark:text-accent-300"
                     : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
                 }`}
               >

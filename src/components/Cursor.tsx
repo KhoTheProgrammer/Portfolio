@@ -25,7 +25,7 @@ const Cursor = () => {
 
     const release = () => {
       if (!magnet) return;
-      gsap.to(magnet, { x: 0, y: 0, duration: 0.9, ease: "elastic.out(1, 0.35)" });
+      gsap.to(magnet, { x: 0, y: 0, duration: 0.7, ease: "power3.out" });
       magnet = null;
     };
 
@@ -55,7 +55,7 @@ const Cursor = () => {
       const hovering = (e.target as HTMLElement).closest(INTERACTIVE);
       gsap.to(ring.current, {
         scale: hovering ? 1.8 : 1,
-        backgroundColor: hovering ? "rgba(139, 92, 246, 0.12)" : "rgba(139, 92, 246, 0)",
+        backgroundColor: hovering ? "rgba(240, 90, 22, 0.12)" : "rgba(240, 90, 22, 0)",
         duration: 0.4,
       });
       gsap.to(dot.current, { scale: hovering ? 0 : 1, duration: 0.3 });

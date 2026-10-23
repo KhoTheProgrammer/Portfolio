@@ -17,7 +17,7 @@ const Footer = () => {
           onClick={scrollToTop}
           className="flex items-center gap-2 font-display text-lg font-bold text-slate-900 dark:text-white"
         >
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-400 text-white">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent-500 text-white">
             K
           </span>
           Kondwani Padyera
@@ -32,7 +32,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label={label}
               data-magnetic
-              className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:border-violet-400 hover:text-violet-600 dark:border-white/10 dark:text-slate-300 dark:hover:text-white"
+              className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:border-accent-400 hover:text-accent-600 dark:border-white/10 dark:text-slate-300 dark:hover:text-white"
             >
               <Icon />
             </a>
@@ -43,7 +43,7 @@ const Footer = () => {
       <div className="border-t border-slate-200 dark:border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 py-5 text-sm text-slate-500 dark:text-slate-400 sm:flex-row sm:px-8">
           <p>© {new Date().getFullYear()} Kondwani Padyera. Built with React &amp; Tailwind.</p>
-          <button onClick={scrollToTop} className="inline-flex items-center gap-1.5 hover:text-violet-600 dark:hover:text-violet-300">
+          <button onClick={scrollToTop} className="inline-flex items-center gap-1.5 hover:text-accent-600 dark:hover:text-accent-300">
             Back to top <FiArrowUp />
           </button>
         </div>
