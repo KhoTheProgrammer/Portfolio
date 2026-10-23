@@ -1,8 +1,10 @@
 import { FiDownload, FiBriefcase, FiBookOpen, FiAward, FiStar, FiArrowUpRight } from "react-icons/fi";
 import type { IconType } from "react-icons";
+import { useRef } from "react";
 import resume from "../assets/files/NewResume.pdf";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import { gsap, useGSAP, prefersReducedMotion } from "../lib/gsap";
 
 interface SectionProps {
   id: string;
@@ -119,51 +121,85 @@ const awards: Entry[] = [
   },
 ];
 
-const Timeline = ({ items }: { items: Entry[] }) => (
-  <div className="relative space-y-6 border-l border-slate-200 pl-6 dark:border-white/10">
-    {items.map((item) => (
-      <div key={item.role + item.period} className="relative">
-        <span className="absolute -left-[31px] top-1.5 grid h-4 w-4 place-items-center rounded-full bg-white ring-2 ring-violet-500 dark:bg-ink">
-          <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
-        </span>
-        <div className="flex flex-wrap items-center gap-2">
-          <h4 className="font-semibold text-slate-900 dark:text-white">{item.role}</h4>
-          <span className="rounded-full bg-violet-500/10 px-2.5 py-0.5 text-xs font-semibold text-violet-600 dark:text-violet-300">
-            {item.period}
+const Timeline = ({ items }: { items: Entry[] }) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  // The gradient spine draws itself with scroll; entries and dots pop in along it.
+  useGSAP(
+    () => {
+      if (prefersReducedMotion()) return;
+      gsap.fromTo(
+        ".tl-line",
+        { scaleY: 0 },
+        {
+          scaleY: 1,
+          ease: "none",
+          scrollTrigger: { trigger: ref.current, start: "top 80%", end: "bottom 60%", scrub: 0.6 },
+        }
+      );
+      gsap.utils.toArray<HTMLElement>(".tl-item").forEach((item) => {
+        gsap
+          .timeline({ scrollTrigger: { trigger: item, start: "top 85%", once: true } })
+          .from(item.querySelector(".tl-dot"), { scale: 0, duration: 0.7, ease: "back.out(3)" })
+          .from(item.querySelector(".tl-body"), { x: -30, autoAlpha: 0, duration: 1 }, "<0.1")
+          .from(item.querySelectorAll("li"), { x: -16, autoAlpha: 0, stagger: 0.05, duration: 0.7 }, "<0.2");
+      });
+    },
+    { scope: ref }
+  );
+
+  return (
+    <div ref={ref} className="relative space-y-6 border-l border-slate-200 pl-6 dark:border-white/10">
+      <span
+        aria-hidden
+        className="tl-line absolute -left-px top-0 h-full w-[2px] origin-top bg-gradient-to-b from-violet-500 via-fuchsia-500 to-cyan-400"
+      />
+      {items.map((item) => (
+        <div key={item.role + item.period} className="tl-item relative">
+          <span className="tl-dot absolute -left-[31px] top-1.5 grid h-4 w-4 place-items-center rounded-full bg-white ring-2 ring-violet-500 dark:bg-ink">
+            <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
           </span>
+          <div className="tl-body">
+            <div className="flex flex-wrap items-center gap-2">
+              <h4 className="font-semibold text-slate-900 dark:text-white">{item.role}</h4>
+              <span className="rounded-full bg-violet-500/10 px-2.5 py-0.5 text-xs font-semibold text-violet-600 dark:text-violet-300">
+                {item.period}
+              </span>
+            </div>
+            <p className="mt-0.5 text-sm font-medium text-slate-500 dark:text-slate-400">
+              {item.orgUrl ? (
+                <a
+                  href={item.orgUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-violet-600 transition-colors hover:text-fuchsia-500 dark:text-violet-300 dark:hover:text-fuchsia-400"
+                >
+                  {item.org}
+                  <FiArrowUpRight className="text-xs" />
+                </a>
+              ) : (
+                item.org
+              )}
+            </p>
+            {item.detail && (
+              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{item.detail}</p>
+            )}
+            {item.bullets && (
+              <ul className="mt-2 space-y-1.5">
+                {item.bullets.map((b) => (
+                  <li key={b} className="flex gap-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-violet-500" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
-        <p className="mt-0.5 text-sm font-medium text-slate-500 dark:text-slate-400">
-          {item.orgUrl ? (
-            <a
-              href={item.orgUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-violet-600 transition-colors hover:text-fuchsia-500 dark:text-violet-300 dark:hover:text-fuchsia-400"
-            >
-              {item.org}
-              <FiArrowUpRight className="text-xs" />
-            </a>
-          ) : (
-            item.org
-          )}
-        </p>
-        {item.detail && (
-          <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{item.detail}</p>
-        )}
-        {item.bullets && (
-          <ul className="mt-2 space-y-1.5">
-            {item.bullets.map((b) => (
-              <li key={b} className="flex gap-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-violet-500" />
-                {b}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    ))}
-  </div>
-);
+      ))}
+    </div>
+  );
+};
 
 const Block = ({
   icon: Icon,
@@ -190,18 +226,17 @@ const Resume = ({ id }: SectionProps) => {
     <section id={id} className="relative bg-slate-50 py-24 dark:bg-ink-2">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Resume"
-              title="Experience & education"
-              subtitle="My journey through software engineering, study, and continuous learning."
-            />
-          </Reveal>
+          <SectionHeading
+            eyebrow="Resume"
+            title="Experience & education"
+            subtitle="My journey through software engineering, study, and continuous learning."
+          />
           <Reveal delay={80}>
             <a
               href={resume}
               download
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-6 py-3 font-semibold text-white shadow-lg shadow-violet-500/25 transition-transform hover:-translate-y-0.5"
+              data-magnetic
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-6 py-3 font-semibold text-white shadow-lg shadow-violet-500/25"
             >
               <FiDownload /> Download CV
             </a>
@@ -209,14 +244,14 @@ const Resume = ({ id }: SectionProps) => {
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-12 lg:grid-cols-2">
-          <Reveal className="space-y-12">
+          <div className="space-y-12">
             <Block icon={FiBriefcase} title="Work Experience" items={experience} />
             <Block icon={FiBookOpen} title="Education" items={education} />
-          </Reveal>
-          <Reveal delay={120} className="space-y-12">
+          </div>
+          <div className="space-y-12">
             <Block icon={FiAward} title="Certifications" items={certifications} />
             <Block icon={FiStar} title="Awards" items={awards} />
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>

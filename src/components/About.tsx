@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import { FiServer, FiLayout, FiSmartphone, FiMapPin } from "react-icons/fi";
 import profilePic from "../assets/kho2.jpg";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import { gsap, useGSAP, prefersReducedMotion } from "../lib/gsap";
 
 interface SectionProps {
   id: string;
@@ -14,23 +16,52 @@ const focus = [
 ];
 
 const About = ({ id }: SectionProps) => {
+  const ref = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      if (prefersReducedMotion()) return;
+      // Photo drifts inside its frame while the section scrolls past.
+      gsap.fromTo(
+        ".about-photo",
+        { yPercent: -8, scale: 1.18 },
+        {
+          yPercent: 8,
+          scale: 1.18,
+          ease: "none",
+          scrollTrigger: { trigger: ".about-frame", start: "top bottom", end: "bottom top", scrub: true },
+        }
+      );
+      gsap.from(".about-card", {
+        y: 50,
+        rotateX: -35,
+        autoAlpha: 0,
+        stagger: 0.12,
+        duration: 1.2,
+        transformOrigin: "50% 100%",
+        scrollTrigger: { trigger: ".about-cards", start: "top 90%", once: true },
+      });
+    },
+    { scope: ref }
+  );
+
   return (
-    <section id={id} className="relative bg-white py-24 dark:bg-ink">
+    <section ref={ref} id={id} className="relative bg-white py-24 dark:bg-ink">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <Reveal>
-          <SectionHeading eyebrow="About me" title="Turning ideas into software" />
-        </Reveal>
+        <SectionHeading eyebrow="About me" title="Turning ideas into software" />
 
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Image */}
           <Reveal className="relative mx-auto w-full max-w-sm">
-            <div className="rounded-3xl bg-gradient-to-tr from-violet-500/20 to-cyan-400/20 p-2">
-              <img
-                src={profilePic}
-                alt="Kondwani Padyera"
-                loading="lazy"
-                className="aspect-square w-full rounded-2xl object-cover"
-              />
+            <div className="about-frame rounded-3xl bg-gradient-to-tr from-violet-500/20 to-cyan-400/20 p-2">
+              <div className="overflow-hidden rounded-2xl">
+                <img
+                  src={profilePic}
+                  alt="Kondwani Padyera"
+                  loading="lazy"
+                  className="about-photo aspect-square w-full object-cover"
+                />
+              </div>
             </div>
             <div className="glass mt-4 flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
               <FiMapPin className="text-violet-500" /> Lilongwe, Malawi
@@ -56,11 +87,11 @@ const About = ({ id }: SectionProps) => {
               real-world problems.
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="about-cards mt-8 grid gap-4 [perspective:800px] sm:grid-cols-3">
               {focus.map(({ icon: Icon, title, detail }) => (
                 <div
                   key={title}
-                  className="rounded-2xl border border-slate-200 bg-slate-50/50 p-4 transition-colors hover:border-violet-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-violet-500/40"
+                  className="about-card rounded-2xl border border-slate-200 bg-slate-50/50 p-4 transition-colors hover:border-violet-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-violet-500/40"
                 >
                   <Icon className="text-xl text-violet-500" />
                   <p className="mt-3 font-semibold text-slate-900 dark:text-white">{title}</p>
