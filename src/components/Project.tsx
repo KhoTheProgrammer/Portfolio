@@ -71,32 +71,6 @@ const ProjectSection = ({ id }: SectionProps) => {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  {/* Hover links */}
-                  <div className="absolute bottom-3 right-3 flex translate-y-2 gap-2 opacity-0 transition-all duration-300 group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100 [@media(hover:none)]:translate-y-0 [@media(hover:none)]:opacity-100">
-                    {project.githubLink && (
-                      <a
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${project.title} on GitHub`}
-                        className="grid h-10 w-10 place-items-center rounded-full bg-white text-slate-800 transition-colors hover:bg-slate-100"
-                      >
-                        <FiGithub />
-                      </a>
-                    )}
-                    {project.liveLink && (
-                      <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${project.title} live demo`}
-                        className="grid h-10 w-10 place-items-center rounded-full bg-accent-600 text-white transition-colors hover:bg-accent-700"
-                      >
-                        <FiExternalLink />
-                      </a>
-                    )}
-                  </div>
                 </div>
 
                 {/* Body */}
@@ -122,6 +96,36 @@ const ProjectSection = ({ id }: SectionProps) => {
                       </span>
                     )}
                   </div>
+
+                  {/* Links */}
+                  {(project.liveLink || project.githubLink) && (
+                    <div className="mt-5 flex flex-wrap gap-2 border-t border-slate-200 pt-4 dark:border-white/10">
+                      {project.liveLink && (
+                        <a
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${project.title} live site`}
+                          className="inline-flex items-center gap-1.5 rounded-lg bg-accent-600 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-700"
+                        >
+                          <FiExternalLink />
+                          Live site
+                        </a>
+                      )}
+                      {project.githubLink && (
+                        <a
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${project.title} source code on GitHub`}
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-400 hover:bg-slate-100 dark:border-white/15 dark:text-slate-200 dark:hover:border-white/30 dark:hover:bg-white/5"
+                        >
+                          <FiGithub />
+                          Code
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </TiltCard>
             </Reveal>
