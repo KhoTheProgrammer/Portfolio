@@ -40,9 +40,8 @@ const Contact = ({ id }: SectionProps) => {
     <section id={id} className="relative bg-white py-24 dark:bg-ink">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
-          eyebrow="Contact"
-          title="Let's build something together"
-          subtitle="Open to collaborations, freelance work, and new opportunities. Drop me a message — I usually reply within a day."
+          title="Get in touch"
+          subtitle="Open to collaborations, freelance work and new roles. Send a message and I'll usually reply within a day."
           align="center"
         />
 

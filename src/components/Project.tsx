@@ -53,9 +53,8 @@ const ProjectSection = ({ id }: SectionProps) => {
     <section id={id} className="relative bg-slate-50 py-24 dark:bg-ink-2">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
-          eyebrow="Portfolio"
-          title="Featured projects"
-          subtitle="A curated selection of things I've built to solve real problems — across full-stack web, mobile, and creative applications."
+          title="Selected projects"
+          subtitle="Things I've built for real users, across full-stack web, mobile and creative applications."
         />
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

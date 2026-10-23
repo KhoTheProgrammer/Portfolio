@@ -227,9 +227,8 @@ const Resume = ({ id }: SectionProps) => {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading
-            eyebrow="Resume"
             title="Experience & education"
-            subtitle="My journey through software engineering, study, and continuous learning."
+            subtitle="Work, study, certifications and awards, most recent first."
           />
           <Reveal delay={80}>
             <a

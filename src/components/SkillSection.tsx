@@ -116,8 +116,7 @@ const SkillsSection = ({ id }: SectionProps) => {
     <section ref={ref} id={id} className="relative overflow-hidden bg-white py-24 dark:bg-ink">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
-          eyebrow="Skills"
-          title="My technical toolkit"
+          title="Technical skills"
           subtitle="Technologies I use to design, build, and ship products across the stack."
           align="center"
         />

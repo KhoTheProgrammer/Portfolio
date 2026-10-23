@@ -48,7 +48,7 @@ const About = ({ id }: SectionProps) => {
   return (
     <section ref={ref} id={id} className="relative bg-white py-24 dark:bg-ink">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionHeading eyebrow="About me" title="Turning ideas into software" />
+        <SectionHeading title="About me" />
 
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Image */}
