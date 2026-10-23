@@ -17,7 +17,7 @@
 
   --animate-float: float 8s ease-in-out infinite;
   --animate-float-slow: float 14s ease-in-out infinite;
-  --animate-marquee: marquee 30s linear infinite;
+  --animate-scroll-cue: scroll-cue 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
 @keyframes float {
@@ -25,17 +25,13 @@
   50% { transform: translate(20px, -30px) scale(1.05); }
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+@keyframes scroll-cue {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
 }
 
-@keyframes reveal-up {
-  from { opacity: 0; transform: translateY(28px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-html {
+/* Native smooth scrolling only when GSAP ScrollSmoother isn't driving the page */
+html:not(.has-smoother) {
   scroll-behavior: smooth;
 }
 
@@ -62,6 +58,12 @@ section[id] {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Wider gradient so GSAP can slide it for a shimmer */
+.gradient-text-animated {
+  background-image: linear-gradient(120deg, #8b5cf6 0%, #e879f9 25%, #22d3ee 50%, #e879f9 75%, #8b5cf6 100%);
+  background-size: 200% 100%;
 }
 
 /* Frosted glass surface */
@@ -93,18 +95,37 @@ section[id] {
   box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.15), 0 20px 60px -20px rgba(139, 92, 246, 0.5);
 }
 
-/* Scroll-reveal */
-.reveal {
-  opacity: 0;
+/* Pointer-follow spotlight on cards (--mx / --my set from JS) */
+.spotlight {
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(139, 92, 246, 0.16), transparent 45%);
 }
-.reveal.is-visible {
-  animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+/* Custom cursor */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  border-radius: 999px;
+  translate: -50% -50%;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #e879f9;
+}
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(139, 92, 246, 0.6);
+  backdrop-filter: invert(0.06);
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; animation: none; }
-  .animate-float, .animate-float-slow, .animate-marquee { animation: none !important; }
+  .animate-float, .animate-float-slow, .animate-scroll-cue { animation: none !important; }
 }
 
 /* Prettier scrollbar (dark) */
