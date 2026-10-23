@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
+import { gsap, useGSAP, scrollToId, prefersReducedMotion } from "../lib/gsap";
 
 const links = [
   { id: "home", label: "Home" },
@@ -15,6 +16,9 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const headerRef = useRef<HTMLElement>(null);
+  const pillRef = useRef<HTMLSpanElement>(null);
+  const linkRefs = useRef<Record<string, HTMLButtonElement | null>>({});
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -41,14 +45,54 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Entrance: bar drops in, then links cascade.
+  useGSAP(
+    () => {
+      if (prefersReducedMotion()) return;
+      gsap
+        .timeline({ delay: 0.1 })
+        .from(headerRef.current, { yPercent: -100, duration: 1.1 })
+        .from(".nav-item", { y: -16, autoAlpha: 0, stagger: 0.06, duration: 0.8 }, "<0.3");
+    },
+    { scope: headerRef }
+  );
+
+  // Slide the highlight pill under whichever link is active.
+  useGSAP(
+    () => {
+      const el = linkRefs.current[active];
+      const list = pillRef.current?.parentElement;
+      if (!el || !list) return;
+      // Measure via rects: the animated <li> transforms make offsetLeft unreliable.
+      gsap.to(pillRef.current, {
+        x: el.getBoundingClientRect().left - list.getBoundingClientRect().left,
+        width: el.offsetWidth,
+        autoAlpha: 1,
+        duration: 0.6,
+        ease: "elastic.out(1, 0.75)",
+      });
+    },
+    { dependencies: [active] }
+  );
+
+  // Stagger the mobile links in each time the drawer opens.
+  useGSAP(
+    () => {
+      if (!open || prefersReducedMotion()) return;
+      gsap.from(".nav-mobile-item", { x: -24, autoAlpha: 0, stagger: 0.05, duration: 0.6, delay: 0.05 });
+    },
+    { scope: headerRef, dependencies: [open] }
+  );
+
   const go = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    scrollToId(id);
     setOpen(false);
   };
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+      ref={headerRef}
+      className={`fixed top-0 inset-x-0 z-50 transition-[background-color,box-shadow] duration-300 ${
         scrolled
           ? "glass shadow-[0_8px_30px_-12px_rgba(0,0,0,0.25)]"
           : "bg-transparent"
@@ -58,7 +102,7 @@ const Navbar = () => {
         {/* Logo */}
         <button
           onClick={() => go("home")}
-          className="group flex items-center gap-2 font-display text-lg font-bold tracking-tight"
+          className="nav-item group flex items-center gap-2 font-display text-lg font-bold tracking-tight"
           aria-label="Back to top"
         >
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-400 text-white shadow-lg shadow-violet-500/30">
@@ -70,10 +114,18 @@ const Navbar = () => {
         </button>
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="relative isolate hidden items-center gap-1 lg:flex">
+          <span
+            ref={pillRef}
+            aria-hidden
+            className="invisible absolute inset-y-0 left-0 -z-10 rounded-full bg-violet-500/10 ring-1 ring-violet-500/30 dark:bg-white/5"
+          />
           {links.map((link) => (
-            <li key={link.id}>
+            <li key={link.id} className="nav-item">
               <button
+                ref={(el) => {
+                  linkRefs.current[link.id] = el;
+                }}
                 onClick={() => go(link.id)}
                 className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   active === link.id
@@ -81,20 +133,18 @@ const Navbar = () => {
                     : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                 }`}
               >
-                {active === link.id && (
-                  <span className="absolute inset-0 -z-10 rounded-full bg-violet-500/10 ring-1 ring-violet-500/30 dark:bg-white/5" />
-                )}
                 {link.label}
               </button>
             </li>
           ))}
         </ul>
 
-        <div className="flex items-center gap-2">
+        <div className="nav-item flex items-center gap-2">
           <ThemeToggle />
           <button
             onClick={() => go("contact")}
-            className="hidden rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition-transform hover:-translate-y-0.5 sm:inline-block"
+            data-magnetic
+            className="hidden rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 sm:inline-block"
           >
             Let's talk
           </button>
@@ -117,7 +167,7 @@ const Navbar = () => {
       >
         <ul className="flex flex-col gap-1 px-5 py-4">
           {links.map((link) => (
-            <li key={link.id}>
+            <li key={link.id} className="nav-mobile-item">
               <button
                 onClick={() => go(link.id)}
                 className={`w-full rounded-xl px-4 py-3 text-left text-base font-medium transition-colors ${
