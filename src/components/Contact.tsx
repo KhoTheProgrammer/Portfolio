@@ -22,7 +22,7 @@ const socials = [
 ];
 
 const inputCls =
-  "w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-violet-400 focus:ring-2 focus:ring-violet-500/20 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-slate-500";
+  "w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/25 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-slate-500";
 
 const Contact = ({ id }: SectionProps) => {
   const [state, handleSubmit] = useForm("xqaqvgpp");
@@ -47,21 +47,21 @@ const Contact = ({ id }: SectionProps) => {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr]">
           {/* Info */}
-          <Reveal className="flex flex-col gap-4">
+          <Reveal className="flex flex-col">
             {details.map(({ icon: Icon, label, value, href }) => (
               <div
                 key={label}
-                className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50/50 p-5 transition-colors hover:border-violet-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-violet-500/40"
+                className="flex items-center gap-4 border-b border-slate-200 py-4 first:pt-0 dark:border-white/10"
               >
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-lg text-white">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent-50 text-lg text-accent-600 dark:bg-accent-500/10 dark:text-accent-400">
                   <Icon />
                 </span>
                 <div className="min-w-0">
-                  <p className="text-sm text-slate-500 dark:text-slate-400">{label}</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">{label}</p>
                   {href ? (
                     <a
                       href={href}
-                      className="block truncate font-semibold text-slate-900 hover:text-violet-600 dark:text-white dark:hover:text-violet-300"
+                      className="block truncate font-semibold text-slate-900 hover:text-accent-600 dark:text-white dark:hover:text-accent-400"
                     >
                       {value}
                     </a>
@@ -72,7 +72,7 @@ const Contact = ({ id }: SectionProps) => {
               </div>
             ))}
 
-            <div className="mt-2 flex gap-3">
+            <div className="mt-6 flex gap-3">
               {socials.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -81,7 +81,7 @@ const Contact = ({ id }: SectionProps) => {
                   rel="noopener noreferrer"
                   aria-label={label}
                   data-magnetic
-                  className="grid h-11 w-11 place-items-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:border-violet-400 hover:text-violet-600 dark:border-white/10 dark:text-slate-300 dark:hover:border-violet-400 dark:hover:text-white"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:border-slate-900 hover:text-slate-900 dark:border-white/10 dark:text-slate-300 dark:hover:border-white dark:hover:text-white"
                 >
                   <Icon className="text-lg" />
                 </a>
@@ -100,7 +100,7 @@ const Contact = ({ id }: SectionProps) => {
                   Message sent!
                 </h3>
                 <p className="mt-1 text-slate-600 dark:text-slate-400">
-                  Thanks for reaching out — I'll get back to you soon.
+                  Thanks for reaching out. I'll get back to you soon.
                 </p>
               </div>
             ) : (
@@ -135,7 +135,7 @@ const Contact = ({ id }: SectionProps) => {
                   type="submit"
                   disabled={state.submitting}
                   data-magnetic
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-violet-500/25 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-600 px-6 py-3.5 font-semibold text-white transition-colors hover:bg-accent-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                 >
                   {state.submitting ? "Sending..." : <>Send message <FiSend /></>}
                 </button>
