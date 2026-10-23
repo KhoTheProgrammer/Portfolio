@@ -93,7 +93,7 @@ const SkillsSection = ({ id }: SectionProps) => {
       });
 
       // Cards cascade in, then each card's chips pop.
-      gsap.set(".skill-card", { y: 70, rotateX: -25, autoAlpha: 0, transformOrigin: "50% 100%" });
+      gsap.set(".skill-card", { y: 40, autoAlpha: 0 });
       gsap.set(".skill-chip", { scale: 0.6, autoAlpha: 0 });
       ScrollTrigger.batch(".skill-card", {
         start: "top 88%",
@@ -101,10 +101,10 @@ const SkillsSection = ({ id }: SectionProps) => {
         onEnter: (cards) =>
           gsap
             .timeline()
-            .to(cards, { y: 0, rotateX: 0, autoAlpha: 1, stagger: 0.1, duration: 1.2 })
+            .to(cards, { y: 0, autoAlpha: 1, stagger: 0.08, duration: 1.1 })
             .to(
               cards.flatMap((c) => Array.from(c.querySelectorAll(".skill-chip"))),
-              { scale: 1, autoAlpha: 1, stagger: 0.02, duration: 0.6, ease: "back.out(2.5)" },
+              { scale: 1, autoAlpha: 1, stagger: 0.02, duration: 0.6 },
               "<0.3"
             ),
       });
@@ -121,16 +121,14 @@ const SkillsSection = ({ id }: SectionProps) => {
           align="center"
         />
 
-        <div className="grid grid-cols-1 gap-5 [perspective:1000px] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((cat) => (
             <article
               key={cat.title}
-              className="skill-card group h-full rounded-2xl border border-slate-200 bg-slate-50/40 p-6 transition-[border-color,box-shadow,translate] duration-300 hover:-translate-y-1 hover:border-violet-300 hover:shadow-xl hover:shadow-violet-500/10 dark:border-white/10 dark:bg-white/5 dark:hover:border-violet-500/40"
+              className="skill-card h-full rounded-2xl border border-slate-200 bg-slate-50/60 p-6 dark:border-white/10 dark:bg-white/[0.03]"
             >
               <div className="flex items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-lg text-white shadow-lg shadow-violet-500/25 transition-transform duration-500 group-hover:rotate-[360deg]">
-                  <cat.icon />
-                </span>
+                <cat.icon className="text-lg text-accent-600 dark:text-accent-400" />
                 <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white">
                   {cat.title}
                 </h3>
@@ -139,7 +137,7 @@ const SkillsSection = ({ id }: SectionProps) => {
                 {cat.items.map((item) => (
                   <span
                     key={item}
-                    className="skill-chip rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-600 transition-colors group-hover:border-violet-200 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
+                    className="skill-chip rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
                   >
                     {item}
                   </span>
@@ -150,15 +148,15 @@ const SkillsSection = ({ id }: SectionProps) => {
         </div>
       </div>
 
-      {/* Infinite tech marquee */}
-      <div className="relative mt-16 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+      {/* Infinite tech marquee (decorative: every name is already listed above) */}
+      <div aria-hidden className="relative mt-16 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
         <div ref={trackRef} className="flex shrink-0 items-center gap-4 pr-4">
           {[...marquee, ...marquee].map((t, i) => (
             <span
               key={i}
-              className="whitespace-nowrap font-display text-2xl font-semibold text-slate-300 transition-colors hover:text-violet-500 dark:text-white/15 dark:hover:text-violet-400"
+              className="whitespace-nowrap font-display text-2xl font-semibold text-slate-400 dark:text-white/25"
             >
-              {t} <span className="text-violet-400">•</span>
+              {t} <span className="text-accent-500">•</span>
             </span>
           ))}
         </div>

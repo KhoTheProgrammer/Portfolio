@@ -56,7 +56,7 @@ const projects: Project[] = [
   {
     title: "Tulame Medicine Store",
     description:
-      "Pharmacy inventory system that tracks every sale and stock movement in real time — so your shelves, your records, and your team finally agree.",
+      "Pharmacy inventory system that tracks every sale and stock movement in real time, so stock counts, sales records and staff stay in sync.",
     tags: [
       "Expo",
       "NestJS",
