@@ -55,7 +55,7 @@ const education: Entry[] = [
     org: "University of Malawi, Zomba",
     period: "2022 – 2026",
     detail:
-      "Graduating on 26 August 2026 with a Distinction. Strong foundation in CS principles, software development, and hands-on project work.",
+      "Graduated on 26 August 2026 with a Distinction. Strong foundation in CS principles, software development, and hands-on project work.",
   },
   {
     role: "Malawi School Certificate of Education (MSCE)",
@@ -72,7 +72,7 @@ const certifications: Entry[] = [
     orgUrl: "https://nextjs.org/learn",
     period: "2025",
     detail:
-      "Built a dashboard hands-on — data fetching and mutations, authentication with NextAuth, and core App Router concepts.",
+      "Built a dashboard hands-on: data fetching and mutations, authentication with NextAuth, and core App Router concepts.",
   },
   {
     role: "Introduction to DHIS2",
@@ -80,7 +80,7 @@ const certifications: Entry[] = [
     orgUrl: "https://dhis2.org",
     period: "2025",
     detail:
-      "Fundamentals of DHIS2 — organisation units, data elements, and the Tracker app — for a project integration.",
+      "DHIS2 fundamentals (organisation units, data elements and the Tracker app) for a project integration.",
   },
   {
     role: "Introduction to Java",
@@ -105,26 +105,26 @@ const awards: Entry[] = [
     role: "Vice Chancellor's Scholarship",
     org: "University of Malawi",
     period: "2024",
-    detail: "Awarded for academic excellence — GPA of 3.9.",
+    detail: "Awarded for academic excellence, with a GPA of 3.9.",
   },
   {
     role: "Dean's List",
     org: "University of Malawi",
     period: "2024",
-    detail: "Recognized for outstanding academic performance — GPA of 3.9.",
+    detail: "Recognized for outstanding academic performance, with a GPA of 3.9.",
   },
   {
     role: "Dean's List",
     org: "University of Malawi",
     period: "2023",
-    detail: "Recognized for outstanding academic performance — GPA of 3.8.",
+    detail: "Recognized for outstanding academic performance, with a GPA of 3.8.",
   },
 ];
 
 const Timeline = ({ items }: { items: Entry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  // The gradient spine draws itself with scroll; entries and dots pop in along it.
+  // The spine draws itself with scroll; entries and dots pop in along it.
   useGSAP(
     () => {
       if (prefersReducedMotion()) return;
@@ -140,7 +140,7 @@ const Timeline = ({ items }: { items: Entry[] }) => {
       gsap.utils.toArray<HTMLElement>(".tl-item").forEach((item) => {
         gsap
           .timeline({ scrollTrigger: { trigger: item, start: "top 85%", once: true } })
-          .from(item.querySelector(".tl-dot"), { scale: 0, duration: 0.7, ease: "back.out(3)" })
+          .from(item.querySelector(".tl-dot"), { scale: 0, duration: 0.6 })
           .from(item.querySelector(".tl-body"), { x: -30, autoAlpha: 0, duration: 1 }, "<0.1")
           .from(item.querySelectorAll("li"), { x: -16, autoAlpha: 0, stagger: 0.05, duration: 0.7 }, "<0.2");
       });
@@ -152,19 +152,17 @@ const Timeline = ({ items }: { items: Entry[] }) => {
     <div ref={ref} className="relative space-y-6 border-l border-slate-200 pl-6 dark:border-white/10">
       <span
         aria-hidden
-        className="tl-line absolute -left-px top-0 h-full w-[2px] origin-top bg-gradient-to-b from-violet-500 via-fuchsia-500 to-cyan-400"
+        className="tl-line absolute -left-px top-0 h-full w-[2px] origin-top bg-accent-500"
       />
       {items.map((item) => (
         <div key={item.role + item.period} className="tl-item relative">
-          <span className="tl-dot absolute -left-[31px] top-1.5 grid h-4 w-4 place-items-center rounded-full bg-white ring-2 ring-violet-500 dark:bg-ink">
-            <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
+          <span className="tl-dot absolute -left-[31px] top-1.5 grid h-4 w-4 place-items-center rounded-full bg-white ring-2 ring-accent-500 dark:bg-ink">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
           </span>
           <div className="tl-body">
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               <h4 className="font-semibold text-slate-900 dark:text-white">{item.role}</h4>
-              <span className="rounded-full bg-violet-500/10 px-2.5 py-0.5 text-xs font-semibold text-violet-600 dark:text-violet-300">
-                {item.period}
-              </span>
+              <span className="text-sm tabular-nums text-slate-500 dark:text-slate-400">{item.period}</span>
             </div>
             <p className="mt-0.5 text-sm font-medium text-slate-500 dark:text-slate-400">
               {item.orgUrl ? (
@@ -172,7 +170,7 @@ const Timeline = ({ items }: { items: Entry[] }) => {
                   href={item.orgUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-violet-600 transition-colors hover:text-fuchsia-500 dark:text-violet-300 dark:hover:text-fuchsia-400"
+                  className="inline-flex items-center gap-1 text-accent-600 underline-offset-4 transition-colors hover:text-accent-700 hover:underline dark:text-accent-400 dark:hover:text-accent-300"
                 >
                   {item.org}
                   <FiArrowUpRight className="text-xs" />
@@ -188,7 +186,7 @@ const Timeline = ({ items }: { items: Entry[] }) => {
               <ul className="mt-2 space-y-1.5">
                 {item.bullets.map((b) => (
                   <li key={b} className="flex gap-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-violet-500" />
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-500" />
                     {b}
                   </li>
                 ))}
@@ -212,9 +210,7 @@ const Block = ({
 }) => (
   <div>
     <div className="mb-5 flex items-center gap-3">
-      <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white">
-        <Icon />
-      </span>
+      <Icon className="text-xl text-accent-600 dark:text-accent-400" />
       <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white">{title}</h3>
     </div>
     <Timeline items={items} />
@@ -235,7 +231,7 @@ const Resume = ({ id }: SectionProps) => {
               href={resume}
               download
               data-magnetic
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-6 py-3 font-semibold text-white shadow-lg shadow-violet-500/25"
+              className="inline-flex items-center gap-2 rounded-full bg-accent-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-700"
             >
               <FiDownload /> Download CV
             </a>
